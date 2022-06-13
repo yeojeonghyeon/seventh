@@ -8,5 +8,12 @@ public class Main {
 		Variable v2 = new Variable("v2");
 		v1.showName();
 		v2.showName();
+		
+		Vehicle vc1 = new Vehicle(0, "hong", true);
+		Vehicle vc2 = new Vehicle(0, "lim", false);
+	}
+	
+	public static void reference(Vehicle refType, int speed) {
+		refType.speedUp(speed);
 	}
 }
