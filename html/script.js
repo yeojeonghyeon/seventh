@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", function(){
     document.querySelector("#secondBtn").addEventListener("click", function(){
         iptObj.value = this.innerText;
     });
+
+    // event handler(이벤트 처리기)는 공식적으로 전달되는 파라미터가 하나이다.
+    document.querySelector("#thirdBtn").addEventListener("click", function(event){
+        console.log(event);
+    });
 });
 
 (function(){
