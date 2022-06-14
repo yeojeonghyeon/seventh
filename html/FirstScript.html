@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+    //   document.addEventListener('click', function () {
+    //     alert('Clicked!');
+    //   });
+        document.addEventListener("DOMContentLoaded", function(){
+            var pTagObj = document.querySelector("p");
+            var hTagObj = document.querySelector("h1");
+
+            pTagObj.addEventListener("click", function(){
+                alert(this.innerText);
+            });
+            hTagObj.addEventListener("click", function(){
+                alert(this.innerText);
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <p>p 테그입니다.</p>
+    <h1>h1 테그입니다.</h1>
+  </body>
+</html>
