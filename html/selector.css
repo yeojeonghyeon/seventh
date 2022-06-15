@@ -1,0 +1,15 @@
+section > article.container {
+    background-color: mistyrose;
+    border: 5px black solid;
+    padding: 5px;
+    margin: 10px;
+    color:blue
+}
+
+section > article.container > div.content {
+    background-color: chocolate;
+}
+
+section > article.container > div.content > p {
+    color:blueviolet;
+}

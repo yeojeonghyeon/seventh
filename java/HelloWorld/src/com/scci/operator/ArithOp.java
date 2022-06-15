@@ -5,6 +5,13 @@ public class ArithOp {
 		ArithOp.testOperator();
 	}
 	
+	int score;
+	void showInfo() {
+		score = score + 1;
+		ArithOp.testOperator();
+	}
+
+	
 	// public : 접근지시자
 	// static 이 붙으면 객체 단위가 아닌, 클래스 고유영역에 한번만 정의된 함수, 클래스 함수
 	// void : 반환값이 없다는 의미, return 문이 없음
