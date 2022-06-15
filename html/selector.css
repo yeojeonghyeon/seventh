@@ -17,6 +17,11 @@ section > article.container > div.content > p {
 section > article.container > div.content > ol > li:nth-child(2n+1){
     color: coral;
 }
+
+section > article.container > div.content > ol > li:hover {
+    background-color: bisque;
+}
+
 section > article.container > div.content > ol > li:nth-child(2n){
     color:green;
 }
