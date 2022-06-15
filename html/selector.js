@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function(){
     olObj.addEventListener("click", olClickFunc);
     var dpIptObj = document.querySelector("#dpIpt");
     function olClickFunc(event){
-        console.log(event);
-        dpIptObj.value = '';
+        // event.target 객체를 이용
+        // event.target 프로퍼티는 이벤트가 발생한 tag(요소, 객체)
+        dpIptObj.value = event.target.innerText;
     }
 });
