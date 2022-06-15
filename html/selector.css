@@ -13,3 +13,10 @@ section > article.container > div.content {
 section > article.container > div.content > p {
     color:blueviolet;
 }
+
+section > article.container > div.content > ol > li:nth-child(2n+1){
+    color: coral;
+}
+section > article.container > div.content > ol > li:nth-child(2n){
+    color:green;
+}
