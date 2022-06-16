@@ -1,8 +1,13 @@
 package com.scci.operator;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class LoopBreakContinue {
 	public static void main(String[] args) {
 		LoopBreakContinue.loopTest();
+		LoopBreakContinue.sortTutorial();
 	}
 	public static void loopTest() {
 		int result = 0;
@@ -25,4 +30,33 @@ public class LoopBreakContinue {
 			if ( j > 1 ) break;
 		}
 	}
+	
+	public static void sortTutorial() {
+		List<Point> pointList = new ArrayList<>();
+		pointList.add(new Point(1, 2));
+		pointList.add(new Point(2, 2));
+		Collections.sort(pointList);
+		
+		pointList.forEach(ele->System.out.println(ele.x));
+	}
+}
+
+class Point implements Comparable<Point> {
+    int x, y;
+    public Point(int x, int y) {
+    	this.x = x;
+    	this.y = y;
+    }
+    @Override
+    public int compareTo(Point p) {
+        if(this.x > p.x) {
+            return 1; // x에 대해서는 오름차순
+        }
+        else if(this.x == p.x) {
+            if(this.y < p.y) { // y에 대해서는 내림차순
+                return 1;
+            }
+        }
+        return -1;
+    }
 }
