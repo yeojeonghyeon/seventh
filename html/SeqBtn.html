@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #header{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            #header .item{
+                width:100%;
+                text-align:center;
+            }
+            .button{
+                background-color: #f44336;
+                margin: 5px;
+                border-radius: 5px;
+            }
+            .button:nth-child(even){
+                background-color: #f3e5f5;
+            }            
+            .button:nth-child(odd){
+                background-color:#ce93d8;
+                margin: 5px;
+                border-radius: 5px;
+            }                        
+            .button:hover{
+                /* background-color: #ba000d; */
+                animation: pulse 2s;
+                /* box-shadow: 0 0 0 2em rgba(#000,0); */
+            }
+            @keyframes pulse {
+                0% {
+                    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+                }
+                100% {
+                    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+                }
+            }
+            @keyframes spaceboots {
+                0% { transform: translate(2px, 1px) rotate(0deg); }
+                10% { transform: translate(-1px, -2px) rotate(-1deg); }
+                20% { transform: translate(-3px, 0px) rotate(1deg); }
+                30% { transform: translate(0px, 2px) rotate(0deg); }
+                40% { transform: translate(1px, -1px) rotate(1deg); }
+                50% { transform: translate(-1px, 2px) rotate(-1deg); }
+                60% { transform: translate(-3px, 1px) rotate(0deg); }
+                70% { transform: translate(2px, 1px) rotate(-1deg); }
+                80% { transform: translate(-1px, -1px) rotate(1deg); }
+                90% { transform: translate(2px, 2px) rotate(0deg); }
+                100% { transform: translate(1px, -2px) rotate(-1deg); }
+            }   
+            #seqDp{
+                display:inline-block;
+                font-size: 2em;
+            }         
+            #seqDp:hover,
+            #seqDp:focus {
+                animation-name: spaceboots;
+                animation-duration: 0.8s;
+                transform-origin:50% 50%;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333333;
+            }
+            ul > li {
+                float: left;
+            }       
+           
+
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                var btnArr = ["firstBtn", "secondBtn", "thirdBtn", "forthBtn"];
+                let seqDpObj = document.getElementById("seqDp");
+                let containerObj = document.getElementById("container");
+                for(let i=0; i<btnArr.length; i++){
+                    let btn = document.createElement("button");
+                    btn.id = btnArr[i];
+                    btn.className = "button";
+                    btn.innerText = btnArr[i];
+                    btn.addEventListener("click", function(){
+                        seqDpObj.innerText = i+1;
+                    });
+                    containerObj.appendChild(btn);
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="item">
+                <span id="seqDp">here!</span>
+            </div>
+            <div id="container" class="item">
+            </div>
+            <ul type="I">
+                <li value="2">Coffee</li>
+                <li value="4">Tea</li>
+                <li>Milk</li>
+            </ul>
+        </div>
+    </body>
+</html>

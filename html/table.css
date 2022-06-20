@@ -1,0 +1,35 @@
+section.container {
+    display: flex;
+/* flex-direction은 section 태그 하위(1단계)의 요소들을 행, 열로 나열 해 준다 */
+    flex-direction: row;
+    justify-content: space-between;
+}
+section.container > nav > ul {
+    list-style-type: disc;
+}
+/* section.container의미는 class 속성이 container인 section 태그 */
+section.container > nav > ul > li {
+    background-color: beige;
+    color: darkblue;
+    margin: 5px;
+}
+
+section.container > article {
+    background-color: coral;
+}
+/* 복수 선택자 , */
+section.container > article td, section.container > article th{
+    border-color: darkcyan;
+    border-style: solid;
+}
+
+section.container > article > table tr:nth-child(2n+1){
+    background-color: rgb(226, 240, 202);
+}
+section.container > article > table tr:nth-child(2n){
+    background-color: rgb(37, 183, 49);
+}
+
+section.container > article > table {
+    width: 100%;
+}

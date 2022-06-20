@@ -1,4 +1,3 @@
-var i = 0;
 document.addEventListener("DOMContentLoaded", function(){
     var olObj = document.querySelector("section > article.container > div.content > ol");
     olObj.addEventListener("click", olClickFunc);
@@ -9,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
         // event.target 프로퍼티는 이벤트가 발생한 tag(요소, 객체)
         dpIptObj.value = event.target.innerText;
     }
+    
     var counter = 0 ;
     document.querySelector("#incrementBtn").addEventListener("click", function(){
         alert(counter++);
