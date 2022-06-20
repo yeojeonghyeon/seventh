@@ -16,3 +16,25 @@
     var z;
     //let z;
 })();
+
+(function(){
+    // closure
+    function counter(){
+        var accum = 0;
+        function increment(){
+            accum = accum + 1;
+            return accum;
+        }
+        return increment;
+    }
+
+    var counter1 = counter();
+    var counter2 = counter();
+
+    counter1();
+    console.log(counter1());
+
+    counter2();
+    counter2();
+    console.log(counter2());
+})();
