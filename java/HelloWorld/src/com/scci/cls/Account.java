@@ -1,6 +1,8 @@
 package com.scci.cls;
 
 public class Account {
+	// AccountHolder 클래스를 사용하고 있음
+	// import 하지 않은 이유는 같은 패키지에 선언되어 있기 때문
 	AccountHolder accHolder;
 	int balance;
 	public Account(AccountHolder accHolder, int balance) {
