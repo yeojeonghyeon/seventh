@@ -43,4 +43,12 @@ document.addEventListener("DOMContentLoaded", function(){
     // counter : 0, number
     // clickHandler.[[scope]] = E.C -- 2
     counterFunc('addBtn', 'subtractBtn', 'disp');
+        // E.C -- 3
+    // incrementObj : +버튼의 DOM(Tag를 javascript에서 참조 할 수 있도록 만들어 놓은 객체) 객체
+    //                 incrementId에 해당하는 DOM, plusBtn
+    // decrementObj : -버튼의 DOM, decrementId DOM, minusBtn
+    // dpObj : 값을 표시하는 input tag의 DOM, dispIpt
+    // counter : 0, number
+    // clickHandler.[[scope]] = E.C -- 3
+    counterFunc('plusBtn', 'minusBtn', 'dispIpt');
 });
