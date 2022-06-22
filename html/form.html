@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form</title>
+    </head>
+    <body>
+        <!-- form 태그 내부의 input, select 태그는 서버로 전송이 됨 -->
+        <form action="/register.do" method="post">
+            <label>이름</label>
+            <input data-label="이름" type="text">
+            <br>
+            <label>주소</label>
+            <input data-label="주소" type="text">
+            <br>
+            <lable>성별</lable>
+            <select name="sexual">
+                <option value="male">남자</option>
+                <option value="female">여자</option>
+            </select>
+            <br>
+            <button id="submitBtn">제출</button>
+        </form>
+        <button>11</button>
+        <script>
+            document.querySelector("#submitBtn").addEventListener("click", function(){
+                // form 하위(자손)의 모든 input 태그(DOM)을 조회(얻어 오기)
+                var inputs = document.querySelectorAll("form input");
+                // for of 배열을 순회
+                for(var iptObj of inputs){
+                    if ( iptObj.value == "" ){
+                        alert(`${iptObj.dataset.label}을(를) 입력하세요.`);
+                        break;
+                    }
+                }
+                event.preventDefault();
+            });
+        </script>
+    </body>
+</html>
