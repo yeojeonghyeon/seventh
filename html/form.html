@@ -3,6 +3,14 @@
     <head>
         <title>form</title>
         <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: rgb(175, 229, 223);
+            }
+
+            * {
+                box-sizing: border-box;
+            }
             form {
                 background-color: lightblue;
                 border-style: groove;
@@ -10,6 +18,19 @@
                 padding: 10px;
                 margin: 20px;
                 width: 50%;
+            }
+
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 20px 0;
+                display: inline-block;
+                border: none;
+                background: #f1f1f1;
+            }
+
+            div.container select {
+                margin: 5px 0 20px 0;
             }
             
             div.container {
@@ -26,17 +47,35 @@
                 margin: 20px;
                 width: 50%;
             }
+
+            .registerbtn {
+                background-color: #04AA6D;
+                color: white;
+                padding: 16px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                opacity: 0.9;
+            }
+
+            .registerbtn:hover {
+                opacity: 1;
+            }
         </style>
     </head>
     <body>
         <!-- form 태그 내부의 input, select 태그는 서버로 전송이 됨 -->
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
         <div class="container">
             <form action="http://localhost:3000/register" method="post">
                 <label>이름</label>
-                <input data-label="이름" name="userName" type="text">
+                <input data-label="이름" name="userName" type="text" required>
                 <br>
                 <label>주소</label>
-                <input data-label="주소" name="userAddr" type="text">
+                <input data-label="주소" name="userAddr" type="text" required>
                 <br>
                 <lable>성별</lable>
                 <select name="sexual">
@@ -44,9 +83,11 @@
                     <option value="female">여자</option>
                 </select>
                 <br>
-                <button id="submitBtn">제출</button>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                <br>
+                <button class="registerbtn" id="submitBtn">제출</button>
             </form>
-            <div>hello</div>
         </div>
         <button>11</button>
         <script>

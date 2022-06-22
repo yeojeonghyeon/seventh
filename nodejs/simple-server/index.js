@@ -17,10 +17,8 @@ app.get('/hello', function(req, res){
 });
 
 app.post('/register', (req, res)=>{
-    const userName = req.body.userName;
-    const userAddr = req.body.userAddr;
-
-    res.json({userName, userAddr});
+    const {userName, userAddr, sexual, psw} = req.body;
+    res.json({userName, userAddr, sexual, psw});
 });
 
 app.listen(port, ()=>{
