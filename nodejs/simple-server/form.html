@@ -89,8 +89,8 @@
                 <button class="registerbtn" id="submitBtn">제출</button>
             </form>
             <div>
-                <ul id="listUl"></ul>
                 <button id="addListBtn">서버에서 리스트 가져오기</button>
+                <ul id="listUl"></ul>
             </div>
         </div>
         <button>11</button>
@@ -116,8 +116,13 @@
                     // 서버상에 문서가 존재하고 요청한 데이터의 처리가 완료되어 응답할 준비가 완료되었을 때
                     if(this.status == 200 && this.readyState == this.DONE) {
                         // 요청한 데이터를 문자열로 반환함.
-                        console.log(xmlHttp.responseText);
-                        JSON.parse(xmlHttp.responseText)            
+                        const result = JSON.parse(xmlHttp.responseText);
+                        const ulObj = document.getElementById("listUl");
+                        for(const item of result.list){
+                            const liObj = document.createElement('li');
+                            liObj.innerText = `${item}`;
+                            ulObj.appendChild(liObj);
+                        }            
                     }
                 };
                 xmlHttp.open("GET", "/list", true);

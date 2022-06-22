@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended:true}));
 // 함수, 람다(lambda) 함수
 // ()=>{}
 app.get('/', (req, res)=>{
-    res.send("Hello World!");
+    res.sendFile(__dirname + '/form.html');
 });
 
 app.get('/hello', function(req, res){
@@ -19,6 +19,11 @@ app.get('/hello', function(req, res){
 app.post('/register', (req, res)=>{
     const {userName, userAddr, sexual, psw} = req.body;
     res.json({userName, userAddr, sexual, psw});
+});
+
+app.get('/list', function(req, res){
+    const result = {list:["javascript", "java", "database"]};
+    res.json(result);
 });
 
 app.listen(port, ()=>{
