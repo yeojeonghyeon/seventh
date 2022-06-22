@@ -31,12 +31,12 @@
     <body>
         <!-- form 태그 내부의 input, select 태그는 서버로 전송이 됨 -->
         <div class="container">
-            <form action="/register.do" method="post">
+            <form action="http://localhost:3000/register.do" method="post">
                 <label>이름</label>
-                <input data-label="이름" type="text">
+                <input data-label="이름" name="userName" type="text">
                 <br>
                 <label>주소</label>
-                <input data-label="주소" type="text">
+                <input data-label="주소" name="userAddr" type="text">
                 <br>
                 <lable>성별</lable>
                 <select name="sexual">
@@ -44,7 +44,7 @@
                     <option value="female">여자</option>
                 </select>
                 <br>
-                <button type="submit" id="submitBtn">제출</button>
+                <button id="submitBtn">제출</button>
             </form>
             <div>hello</div>
         </div>
@@ -63,7 +63,7 @@
                 }
                 // 기본 행위를 막아 주는 것
                 // event 객체는 event handler에는 자동으로 넘어오는 인자
-                event.preventDefault();
+                // event.preventDefault();
             });
         </script>
     </body>
