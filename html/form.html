@@ -2,27 +2,56 @@
 <html>
     <head>
         <title>form</title>
+        <style>
+            form {
+                background-color: lightblue;
+                border-style: groove;
+                border-radius: 5px;
+                padding: 10px;
+                margin: 20px;
+                width: 50%;
+            }
+            
+            div.container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            div.container > div {
+                background-color: lightblue;
+                border-style: groove;
+                border-radius: 5px;
+                padding: 10px;
+                margin: 20px;
+                width: 50%;
+            }
+        </style>
     </head>
     <body>
         <!-- form 태그 내부의 input, select 태그는 서버로 전송이 됨 -->
-        <form action="/register.do" method="post">
-            <label>이름</label>
-            <input data-label="이름" type="text">
-            <br>
-            <label>주소</label>
-            <input data-label="주소" type="text">
-            <br>
-            <lable>성별</lable>
-            <select name="sexual">
-                <option value="male">남자</option>
-                <option value="female">여자</option>
-            </select>
-            <br>
-            <button id="submitBtn">제출</button>
-        </form>
+        <div class="container">
+            <form action="/register.do" method="post">
+                <label>이름</label>
+                <input data-label="이름" type="text">
+                <br>
+                <label>주소</label>
+                <input data-label="주소" type="text">
+                <br>
+                <lable>성별</lable>
+                <select name="sexual">
+                    <option value="male">남자</option>
+                    <option value="female">여자</option>
+                </select>
+                <br>
+                <button type="submit" id="submitBtn">제출</button>
+            </form>
+            <div>hello</div>
+        </div>
         <button>11</button>
         <script>
             document.querySelector("#submitBtn").addEventListener("click", function(){
+                // ******* 이벤트 핸들러의 this는 이벤트가 발생한 DOM 객체를 의미함
                 // form 하위(자손)의 모든 input 태그(DOM)을 조회(얻어 오기)
                 var inputs = document.querySelectorAll("form input");
                 // for of 배열을 순회
@@ -32,6 +61,8 @@
                         break;
                     }
                 }
+                // 기본 행위를 막아 주는 것
+                // event 객체는 event handler에는 자동으로 넘어오는 인자
                 event.preventDefault();
             });
         </script>
