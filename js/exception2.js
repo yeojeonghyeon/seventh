@@ -5,7 +5,10 @@ try{
     a();
 }catch(e){
     console.log(`global 예외처리기 error : ${e}`);
+}finally{// 예외의 발생 유무와 상관없이 처리되는 블럭
+    console.log('finally');
 }
+console.log('global code followed by try catch');
 
 function a(){
     b(); // a 함수는 b가 리턴 하기를 기다림.
