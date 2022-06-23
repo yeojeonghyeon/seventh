@@ -22,7 +22,7 @@ app.post('/register', (req, res)=>{
 });
 
 app.get('/list', function(req, res){
-    const result = {list:["javascript", "java", "database"]};
+    const result = {list:["javascript", "java", "database", "spring", "reactjs", "html5"]};
     res.json(result);
 });
 
