@@ -10,13 +10,13 @@ public class SunCheonBank {
 		
 		for(int i=0; i<accList.size(); i++) {
 			BankAccount ba = accList.get(i);
-			ba.deposite(100000000);
+			ba.deposite(1000000);
 		}
 		
 		for(int i=0; i<accList.size(); i++) {
 			BankAccount ba = accList.get(i);
 			try {
-				ba.withdraw(11000000);
+				ba.withdraw(1100000);
 			} catch (BalanceNotEnoughException e) {
 				System.out.println(e.getMessage());
 			}
