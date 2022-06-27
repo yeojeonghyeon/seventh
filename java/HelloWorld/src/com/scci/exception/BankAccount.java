@@ -44,6 +44,7 @@ class BalanceNotEnoughException extends Exception {
 	public BalanceNotEnoughException(String message, long balance) {
 		// super, 상속받은 Exception 클래스의 생성자를 호출
 		super(message); // Exception 클래스의 생성자 함수
+		this.balance = balance;
 	}
 	@Override
 	public String getMessage() {
