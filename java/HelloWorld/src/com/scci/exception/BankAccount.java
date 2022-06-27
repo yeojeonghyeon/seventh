@@ -4,13 +4,14 @@ package com.scci.exception;
 public class BankAccount {
 	private AccountHolder owner;
 	long balance;
+	// 생성자
 	public BankAccount(AccountHolder owner, long balance) {
 		this.owner = owner;
 		this.balance = balance;
 	}
 	public long withdraw(long amount) throws BalanceNotEnoughException {
 		if (balance - amount >= 0) {
-			throw new BalanceNotEnoughException("잔액이 부족합니다");
+			throw new BalanceNotEnoughException("balance is not enough!", balance);
 		}
 		balance = balance - amount;
 		return amount;
@@ -27,7 +28,7 @@ class AccountHolder {
 	String ownerName;
 	String ownerId;
 	String accountNo;
-
+	// 생성자
 	public AccountHolder(String ownerName, String ownerId) {
 		this.ownerName = ownerName;
 		this.ownerId = ownerId;
@@ -46,6 +47,6 @@ class BalanceNotEnoughException extends Exception {
 	}
 	@Override
 	public String getMessage() {
-		return super.getMessage() + " 잔액:" + balance;
+		return super.getMessage() + " balance: " + balance;
 	}
 }
