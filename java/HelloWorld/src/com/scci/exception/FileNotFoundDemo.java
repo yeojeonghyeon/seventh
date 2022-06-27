@@ -8,9 +8,9 @@ public class FileNotFoundDemo {
 	public static void main(String[] args) {
 		try {
 			FileNotFoundDemo.readFile("c:/development/source/java/test.txt");
-		}catch(IOException e) { // 1, 발생한 예외타입과 비교
+		}catch(NullPointerException e) { // 1, 발생한 예외타입과 비교
 			System.out.println(e.getMessage());
-		}catch(NullPointerException e) { // 2, IOException 하위 타입이 아니라면, NullPointerException 타입인지 비교
+		}catch(Exception e) { // 2, IOException 하위 타입이 아니라면, NullPointerException 타입인지 비교
 			System.out.println(e.getMessage());
 		}finally { // 3. 예외와 상관없이 처리
 			System.out.println("finally statement");
