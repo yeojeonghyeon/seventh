@@ -2,7 +2,7 @@ package com.scci.inheritance;
 
 public class Animal {
 	protected String species;
-	protected FoodType canEatType;
+	protected FoodType canEatType = FoodType.MEAT;
 	// 생성자 함수를 생성하게 되면
 	// 기본 생성자 함수가 자동으로 만들어 지지지 않음
 	public Animal(String species) {
