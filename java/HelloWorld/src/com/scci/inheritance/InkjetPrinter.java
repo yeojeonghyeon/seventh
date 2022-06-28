@@ -7,6 +7,7 @@ public class InkjetPrinter extends Printer {
 		this.isColorful = isColorful;
 	}
 	// 부모에 있는 print 함수를 재정의
+	// 함수 오버라이딩
 	@Override
 	public void print(String contents) {
 		if ( isColorful ) {
