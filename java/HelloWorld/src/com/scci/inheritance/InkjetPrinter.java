@@ -19,11 +19,10 @@ public class InkjetPrinter extends Printer {
 }
 
 class LaserPrinter extends Printer{
-	private String tonerKind;
-	private boolean isColorMode = true;
-	public LaserPrinter(String modelName, String manufacturer, String serialNo, int dpi, boolean is110v, String tonerKind) {
+	private boolean isColorMode;
+	public LaserPrinter(String modelName, String manufacturer, String serialNo, int dpi, boolean is110v, boolean isColorMode) {
 		super(modelName, manufacturer, serialNo, dpi, is110v);
-		this.tonerKind = tonerKind;
+		this.isColorMode = isColorMode;
 	}
 	@Override
 	public void print(String contents) {
