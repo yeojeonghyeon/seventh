@@ -47,6 +47,14 @@ class Dog extends Animal{
 				break;
 			default:
 		}
+		System.out.println(result);
+	}
+}
+
+class Cow {
+	protected String name;
+	public Cow(String name) {
+		this.name = name;
 	}
 }
 
