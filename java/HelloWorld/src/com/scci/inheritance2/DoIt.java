@@ -22,11 +22,21 @@ class DoSomething implements DoItPlus {
 	@Override
 	public void doSomething(int i, double x) {
 		// TODO Auto-generated method stub
-		didItWork(1, 1.1, "a");
+		System.out.println("doSomething");
 	}
 	@Override
 	public int doSomethingElse(String s) {
-		// TODO Auto-generated method stub
+		System.out.println("doSomethingElse");
 		return 0;
+	}
+}
+
+class DoSomethingDemo {
+	public static void main(String[] args) {
+		DoItPlus doItPlus = new DoSomething();
+		DoIt doIt = doItPlus;
+		doIt.doSomething(1, 1);
+		doIt.doSomethingElse("11");
+		doIt.didItWork(1, 1, "DoIt");
 	}
 }
