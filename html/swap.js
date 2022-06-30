@@ -17,30 +17,22 @@
             }
         }
         function moveItems(src, target){
+            // collection type을 배열로 변경 후 배열의 요소 중 selected 속성이 true 또는 selected 속성이 있는
+            // option  객체들만 걸러낸다
             var options = Array.from(src.options).filter( element => element.selected );
 
             for(var element of options){
                 target.appendChild(src.removeChild(element));
             }
         }
-        // function moveItems(src, target){
-        //     var options = src.options;
-        //     var removedItems = [];
-        //     for(var i=options.length-1; i>=0; i--){
-        //         if ( options[i].selected ){
-        //             removedItems.push(src.removeChild(options[i]));
-        //         }
-        //     }
-        //     for(var element of removedItems){
-        //         target.appendChild(element);
-        //     }
-        // }
     }
 
     function buildItems(leftSelObj, rightSelObj, lItems, rItems){
         for(var item of lItems){
+            // option tag의 DOM 객체를 생성한다
             var addedOption = document.createElement("option");
             addedOption.value = addedOption.innerText = item;
+            // 생성한 option 테그의 DOM 객체를 select의 자식노드(하위)로 배치한다
             leftSelObj.appendChild(addedOption);
         }
         for(var item of rItems){
@@ -56,4 +48,8 @@
     var lItems = ["tea", "coffee", "milk tea"];
     var rItems = ["aa", "bb", "cc"];
     swapModule("leftSel", "rightSel", "toLeftBtn", "toRightBtn", lItems, rItems);
+
+    let leftItems = [1, 3, 5, 7, 9];
+    let rightItems = [2, 4, 6, 8, 10];
+    swapModule("lSelect", "rSelect", "leftBtn", "rightBtn", leftItems, rightItems);
 })();
