@@ -52,3 +52,23 @@ function counter(){
 
 const c1 = counter();
 const c2 = counter();
+
+
+class Animal {
+    constructor(){
+        this.age = 15;
+    }
+    speak() {
+        return this;
+    }
+    static eat() {
+        return this;
+    }
+}
+
+let obj = new Animal();
+obj.speak(); // the Animal object
+let speak = obj.speak;
+console.log(speak()); // undefined
+console.log(obj);
+console.log(obj.speak());

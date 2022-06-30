@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>swap</title>
+        <script src="swap.js" defer></script>
+        <style>
+            .grid-container{
+                width:50%;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                background-color: #2196F3;
+                padding: 10px;                
+            }
+            div.grid-container > div.grid-item{
+                text-align: center;
+            }
+            select option[selected=true]{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="grid-item">
+                <select id="leftSel" multiple>
+                </select>
+            </div>
+            <div class="grid-item">
+                <input type="button" id="toRightBtn" value="&gt;&gt;">
+                <br>
+                <input type="button" id="toLeftBtn" value="&lt;&lt;">
+            </div>
+            <div class="grid-item">
+                <select id="rightSel" multiple>
+                </select>                
+            </div>            
+        </div>
+    </body>
+</html>
