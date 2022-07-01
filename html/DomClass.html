@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM 탐색</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                // 함수 체이닝(chaining)
+                // 이벤트 헨들러, 콜백 함수
+                // 1. 선언식 무기명 함수, addEventListener("click", function(){});
+                // 2. 미리 정의된 함수의 레퍼런스를 전달 하는 것
+                //    function eventHandler(){}
+                //    addEventListener("click", eventHandler);
+                // 3. lambda ()=>{}
+                let counter = 5;
+                let btn = document.querySelector("#addClassBtn").addEventListener("click", ()=>{
+                    console.log(++counter);
+                    let liTags = document.querySelectorAll("li");
+                    for(let liDom of liTags){
+                        // li tag에 클래스를 토글 시킨다
+                        // 클래스가 있으면 빼버리고, 없으면 추가 해 줌
+                        liDom.classList.toggle("bright");
+                    }
+                });
+            });
+        </script>
+        <style>
+            .bright {
+                background-color:greenyellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <ul>
+                <li>disco</li>
+                <li>samba</li>
+                <li>waltz</li>
+                <li>hoola</li>
+            </ul>
+            <button id="addClassBtn">bright 추가</button>
+        </div>
+    </body>
+</html>

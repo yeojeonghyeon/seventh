@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .on{
+            background-color: brown;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(){
+            document.querySelector(".tab").addEventListener("click", function(e){
+                e.target.title = "선택됨";
+                e.target.parentElement.classList.add("on");
+                var children = this.children;
+                for(var i=0; i < children.length; i++){
+                    var li = children[i];
+                    if ( e.target.parentElement === li ) continue;
+                    li.classList.remove("on");
+                    li.firstElementChild.title = "";
+                }                
+            });
+        });
+     </script>            
+</head>
+<body>
+    <ul class="tab">
+        <li class="on"><a href="#" title="선택됨">여행지</a></li>
+        <li><a href="#" title="33">숙박</a></li>
+        <li><a href="#" title="33">맛집</a></li>
+     </ul>
+</body>
+</html>
