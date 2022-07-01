@@ -41,6 +41,8 @@
             rightSelObj.appendChild(addedOption);
         }                    
     }
+    // 브라우저 환경의 글로벌일 경우
+    // windows 객체에 property를 추가할 경우, 글로벌 변수처럼 접근 할 수 있다.
     global.swapModule = swapModule;
 })(window);
 

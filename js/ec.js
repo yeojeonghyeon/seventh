@@ -14,7 +14,7 @@ function outer(){
     let score = 0;
     function inner(){
         let temp = 0;
-        return function(){
+        return function(){ // 무명 함수, 무기명 함수
             score++;
             temp++;
             return {temp, score};
