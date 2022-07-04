@@ -15,6 +15,12 @@
                     }
                     event.preventDefault();
                 });
+                let lis = document.querySelector("div.menu").firstElementChild.children;
+                document.querySelector("#menuBtn").addEventListener("click", function(){
+                    for(let liObj of lis){
+                        console.log(liObj.innerText);
+                    }
+                });
             };
         </script>
     </head>
@@ -36,5 +42,13 @@
             </div>
             <button id="checkBtn">입력검증</button>            
         </form>
+        <div class="menu">
+            <ul>
+                <li>tea</li>
+                <li>coffee</li>
+                <li>milk</li>
+            </ul>
+        </div>
+        <button id="menuBtn">li 탐색</button>
     </body>
 </html>
