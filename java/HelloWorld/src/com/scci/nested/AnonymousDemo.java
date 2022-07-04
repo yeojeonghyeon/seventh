@@ -8,8 +8,9 @@ public class AnonymousDemo {
 		p.print(contents);
 	}
 }
-
+// SAM, FunctionalInterface 형태
 interface Printable {
+	// consumer 형태
 	void print(String contents);
 }
 
@@ -35,5 +36,7 @@ class Demo {
 		// SAM single abstract method, 인터페이스가 추상함수 하나를 가지고 있으면
 		// 해당 함수는 lambda 타입으로 정의가 가능 ( 객체 생성 )
 		a.print(contents->System.out.println(contents));
+		// 
+		a.print(System.out::println);
 	}
 }
