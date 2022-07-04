@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Traversal</title>
+        <script>
+            window.onload = function(){
+                let inputs = document.querySelectorAll("form > div.userInfo > input");
+                let filteredInputs = Array.from(inputs).filter(ele=>ele.type!=='checkbox');
+                document.querySelector("#checkBtn").addEventListener("click", function(){
+                    for(let iptObj of filteredInputs){
+                        if ( iptObj.value == "" ){
+                            alert(iptObj.placeholder);
+                            return;
+                        }
+                    }
+                    event.preventDefault();
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <form>
+            <div class="userInfo">
+                <label>이름</label><input type="text" value="" placeholder="이름">
+                <br>
+                <label>나이</label><input type="number" value="" placeholder="나이">
+                <br>
+                <label>주소</label><input type="text" value="" placeholder="주소">
+                <br>
+                <h5>취미</h5>
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                <label for="vehicle1"> I have a bike</label><br>
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                <label for="vehicle2"> I have a car</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            </div>
+            <button id="checkBtn">입력검증</button>            
+        </form>
+    </body>
+</html>
