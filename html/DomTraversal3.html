@@ -15,9 +15,9 @@
                     var text = event.target.innerText;
                     // Array.prototype에 있는 from 함수를 사용하여 NodeList(런타임에서 제공하는 자료형)를 배열로 변환 후
                     // Array.prototype에 있는 filter 함수를 사용하여 placeholder가 현재 눌린 버튼의 innerText와 같은 input를 선별 함
-                    var resultArr = Array.from(inputList).filter(ele=>ele.placeholder==text);
-                    if ( resultArr.length > 0 ){
-                        dpIptObj.value = resultArr[0].value;
+                    var resultInputArr = Array.from(inputList).filter(ele=>ele.placeholder==text);
+                    if ( resultInputArr.length > 0 ){
+                        dpIptObj.value = resultInputArr[0].value;
                     }
                 });
             });
