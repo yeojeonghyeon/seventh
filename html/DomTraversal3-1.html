@@ -4,22 +4,23 @@
         <title>DOM 탐색</title>
         <script>
             document.addEventListener("DOMContentLoaded", function(){
-                var buttonDivObj = document.querySelector("div.buttonDiv");
                 var inputList = document.querySelectorAll("div.inputDiv > input");
                 var dpIptObj = document.querySelector("#dpIpt");
-                // event delegation(이벤트 위임)
-                // button 별로 이벤트 헨들러를 지정하지 않고, 버튼들을 감싼(container) div에 이벤트 헨들러를 등록하고
-                // event 객체의 target 프로퍼티를 사용하여 실제 이벤트가 발생한 DOM 객체를 얻음
-                buttonDivObj.addEventListener("click", function(){
-                    // 이벤트가 발생한 DOM 객체(button)의 innerText 값을 가져옴
-                    var text = event.target.innerText;
+                var buttonList = document.querySelectorAll("div.buttonDiv > button");
+                for(var ele of buttonList){
+                    ele.addEventListener("click", handler);
+                }
+                
+                // DOM 객체의 이벤트 헨들러의 레퍼런스로 사용된 함수 내부의 this는 이벤트가 발생한 DOM 객체
+                function handler(){
+                    var text = this.innerText;
                     // Array.prototype에 있는 from 함수를 사용하여 NodeList(런타임에서 제공하는 자료형)를 배열로 변환 후
                     // Array.prototype에 있는 filter 함수를 사용하여 placeholder가 현재 눌린 버튼의 innerText와 같은 input를 선별 함
                     var resultArr = Array.from(inputList).filter(ele=>ele.placeholder==text);
                     if ( resultArr.length > 0 ){
                         dpIptObj.value = resultArr[0].value;
                     }
-                });
+                }
             });
         </script>
     </head>
