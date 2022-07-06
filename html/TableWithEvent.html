@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table DOM Search</title>
+        <style>
+            article.contents {
+                text-align: center;
+            }
+            article.contents > table.numberTable {
+                width: 60%;
+            }
+            article.contents > table.numberTable th, article.contents > table.numberTable td {
+                background-color: lightgrey;
+                border: 1px solid black;
+            }
+
+            article.contents > table.numberTable td.bingo {
+                background-color: rgb(218, 97, 97);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h3>Table DOM 탐색 예제</h3>
+        </header>
+        <section class="container">
+            <article class="contents">
+                <table class="numberTable">
+                    <thead>
+                        <tr>
+                            <th>컬럼1</th>
+                            <th>컬럼2</th>
+                            <th>컬럼3</th>
+                            <th>컬럼4</th>
+                            <th>컬럼5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+    </body>
+</html>
