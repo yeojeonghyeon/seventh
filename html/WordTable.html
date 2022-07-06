@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table DOM Search</title>
+        <style>
+            article.contents {
+                text-align: center;
+            }
+            article.contents > table.numberTable {
+                width: 60%;
+                margin-left:auto; 
+                margin-right:auto;
+            }
+            article.contents > table.numberTable th, article.contents > table.numberTable td {
+                background-color: lightgrey;
+                border: 1px solid black;
+            }
+
+            article.contents > table.numberTable td.bingo {
+                /* background: linear-gradient(to right, blue, pink); */
+                animation-name: example;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+            }
+            @keyframes example {
+                from {background-color: red;}
+                to {background-color: yellow;}
+            }
+        </style>
+        <script src="wordTable.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h3>Table DOM 탐색 예제</h3>
+        </header>
+        <section class="container">
+            <article class="contents">
+                <table class="numberTable">
+                    <thead>
+                        <tr>
+                            <th>컬럼1</th>
+                            <th>컬럼2</th>
+                            <th>컬럼3</th>
+                            <th>컬럼4</th>
+                            <th>컬럼5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input id="answerIpt" type="text" placeholder="여기에 값을 입력하세요">
+                <button id="searchBtn">정답을찾자!</button>
+                <button id="randomBtn">숫자를바꾸자!</button>
+                <button id="initBtn">클래스를빼자</button>
+            </article>
+        </section>
+    </body>
+</html>
