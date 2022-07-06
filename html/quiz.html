@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>20220705</title>
+        <style>
+            body{
+                text-align: center;
+                background-color: antiquewhite;
+            }
+            div.inputDiv {
+                background-color : rgba(255, 179, 37, 0.831);
+                border-radius: 20px;
+                height: 200px;
+                margin-bottom: 20px;
+            }
+            input{
+                margin: 20px;
+            }
+            div.inputDiv>input{
+                margin: 20px 0;
+            }
+            
+            button{
+                    color: whitesmoke;
+                    background-color : rgba(173, 172, 183, 0.831);
+                    border-radius: 20px ;
+                    border: solid rgba(127, 123, 167, 0.831);
+                    width: 100px;
+                    height: 30px;
+                }
+        
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded",function(){
+                let dpIpt = document.querySelector("#dpipt");
+                let btnList = document.querySelectorAll("div.buttonDiv > button");
+                let iptList = document.querySelectorAll("div.inputDiv > input");
+                // button 3개니깐, forEach 콜백 함수가 3번 실행
+                // 콜백 함수의 파라미터는 각각 버튼 객체(DOM) 전달됨
+                // 콜백함수가 실행되면서 각각 EC 생성되고, EC 사라지지 않음
+                // btn 첫번째 버튼
+                // btn 두번째 버튼
+                // btn 세번째 버튼
+                btnList.forEach(function(btn){
+                    btn.addEventListener("click" , function(){
+                        iptList.forEach(function(ipt){
+                            if(btn.innerText == ipt.placeholder)
+                            dpIpt.value = ipt.value;
+                        });
+                    }); 
+                });
+             });
+        </script>
+    </head>
+
+    <body>
+        <input type="text" id="dpipt" placeholder="여기욥">
+        <div class="inputDiv">
+            <input type="text" value="1" placeholder="first">
+            <input type="text" value="2" placeholder="second">
+            <input type="text" value="3" placeholder="third">
+        </div>
+
+        <div class="buttonDiv">
+            <button>first</button>
+            <button>second</button>
+            <button>third</button>   
+        </div>
+    </body>
+</html>
