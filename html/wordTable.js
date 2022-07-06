@@ -6,7 +6,7 @@
     const bingoClass = "bingo";
     const wordArr = ['click','function','this','document.querySelector','document.getElementById','execution context', 'closure',
     'for of','Immediately Invoked Function Expression','function declaration', 'function expression',
-    'const','function-socped','block-scoped','prototype','function chaining','template literal',
+    'const','function-scoped','block-scoped','prototype','function chaining','template literal',
     'backtick','first-class object','lambda','arrow function','primitive type','reference type',
     'Document Object Model','Hello World','console.log','addEventListener'];
     
