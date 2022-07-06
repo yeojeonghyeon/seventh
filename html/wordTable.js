@@ -9,6 +9,8 @@
     'const','function-scoped','block-scoped','prototype','function chaining','template literal',
     'backtick','first-class object','lambda','arrow function','primitive type','reference type',
     'Document Object Model','Hello World','console.log','addEventListener'];
+
+    var audio = new Audio(`gunShot.mp3`);
     
     for(var tdDom of tdList){
         tdDom.innerText = wordArr[Math.floor(Math.random()*wordArr.length)];
@@ -40,6 +42,7 @@
         var filteredInputs = Array.from(tdList).filter(ele=>ele.innerText==answerIpt.value);
         for(var tdDom of filteredInputs){
             tdDom.classList.add(bingoClass);
+            audio.play();
         }
     }
 })();
