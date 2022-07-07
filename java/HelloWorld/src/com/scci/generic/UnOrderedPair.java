@@ -14,11 +14,11 @@ class UnOrderedDemo {
 		Object key = uAll.getKey();
 		Parent v = uAll.getValue();
 		
-		String s = up.getKey();
-		Parent pp = up.getValue();
+		String upKey = up.getKey();
+		Parent upValue = up.getValue();
 		
-		uc.getKey();
-		uc.getValue();
+		String ucKey = uc.getKey();
+		Child ucValue = uc.getValue();
 	}
 }
 
