@@ -21,8 +21,25 @@ class SuppliableDemo {
 	// upper bounded wildcards
 	// OrderedPair<K, V>
 	// Number의 하위 타입 가능, Fruit의 하위 타입 가능
+	// none generic 함수, 변수만 자유롭게 사용
+	// return type에 type parameter가 있는 함수만 제대로 사용 가능
+	// type parameter가 함수의 파라미터로 설정 된 함수는 사용 x
+	// getter ok, setter not ok
 	public static void zoo(OrderedPair<? extends Number, ? extends Fruit> op) {
-		
+		Number key = op.getKey();
+		op.setKey(key);
+	}
+	
+	// lower bounded wildcards
+	// OrderedPair<K, V>
+	// Number의 상위 타입 가능, Fruit의 상위 타입 가능
+	// none generic 함수, 변수만 자유롭게 사용
+	// return type에 type parameter가 있는 함수만 제대로 사용 가능
+	// type parameter가 함수의 파라미터로 설정 된 함수는 사용 x
+	// getter not ok, setter ok
+	public static void bar(OrderedPair<? super Apple, ? super Apple> op) {
+		Apple key = op.getKey();
+		op.setKey(new Apple("Apple", "fall"));
 	}
 }
 
