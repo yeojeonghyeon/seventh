@@ -12,7 +12,9 @@ class SuppliableDemo {
 		SuppliableDemo.zoo(oia);
 		SuppliableDemo.zoo(oda);
 	}
-	
+	// K, V 어떤 타입이 오든 상관 없음
+	// 제네릭 타입의 함수, 변수를 사용 할 수 없음
+	// none generic 함수, 변수만 자유롭게 사용
 	public static void foo(OrderedPair<?, ?> op) {
 		
 	}
