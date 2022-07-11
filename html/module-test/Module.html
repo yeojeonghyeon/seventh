@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="module">
+            // 객체 비구조화 구문을 사용해서 arr 식별자, funcInTest 식별자
+            // 변수 arr, funcInTest
+            import func, {arr, funcInTest} from './test.js';
+            // 아래는 지양
+            // import * as mo from './test.js';
+            for(let ele of arr){
+                console.log(ele);
+            }
+            console.log(funcInTest());
+            console.log(func());
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
