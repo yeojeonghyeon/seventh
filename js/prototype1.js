@@ -4,14 +4,12 @@ function Arithmetic(x, y){
     this.x = x;
     this.y = y;
 }
-
 Arithmetic.prototype.add = function(){
     return this.x + this.y;
 }
 Arithmetic.prototype.subtract = function(){
     return this.x - this.y;
 }
-
 // op1.__proto__ <= Arithmetic.prototype
 let op1 = new Arithmetic(1, 2);
 let op2 = new Arithmetic(2, 3);
