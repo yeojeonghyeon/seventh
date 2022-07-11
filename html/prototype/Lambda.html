@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lambda - arrow function</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                console.log(1, this);
+                document.querySelector("#testBtn").addEventListener("click", function(){
+                    console.log(this);
+                });
+                document.querySelector("#applyBtn").addEventListener("click", ()=>{
+                    console.log(2, this);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="testBtn">1</button>
+        <button id="applyBtn">2</button>
+    </body>
+</html>
