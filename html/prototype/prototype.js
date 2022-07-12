@@ -15,6 +15,11 @@
             console.log(`${species} ${livingPlace}`);
         };
     }
+    // {constructor: Animal, __proto__: Object.prototype}
+    Animal.prototype.describe = function(){
+        console.log(`종은 ${this.species} 사는 곳은 ${this.livingPlace}`);
+    };
+
     // 객체 2개 생성, 변수 이름은 cat, dog
     // var : function scoped, 선언문을 만나지 않아도 사용 가능
     // let, const : block scoped, 선언문이 실행되기 전까지 사용 불가
@@ -27,4 +32,28 @@
 
     cat.showInfoUsingClosure(); //
     dog.showInfoUsingClosure(); //
+
+    cat.describe();
+    dog.describe();
+
+    console.log(cat.__proto__);
+
+    console.log(cat.hasOwnProperty('species')); // true
+    console.log(cat.hasOwnProperty('showInfo')); // true 
+    console.log(cat.hasOwnProperty('describe')); // false
+
+    for(let sdel in cat){
+        // console.log(`${sdel} ${cat[sdel]}`);
+        if ( cat.hasOwnProperty(sdel) ){
+            console.log(`${sdel} ${cat[sdel]}`);
+        } 
+    }
+
+    Animal.prototype.describe(); // describe 함수의 this <= Animal.prototype
+    cat.desc = Animal.prototype.describe;
+    cat.desc(); // describe 함수의 레퍼런스를 담고 있음, 실행되는 함수의 this <= cat
+
+    let funRef = Animal.prototype.describe;
+    funRef(); // when use scrict ; this <= undefined
+    funRef(); // without use strict ; this <= global, window 객체
 })();
