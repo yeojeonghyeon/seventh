@@ -15,6 +15,16 @@
             .mainContentsHover {
                 color: rgb(203, 102, 156);
             }
+            div.findDiv > table#foodTbl td.food {
+                color:brown;
+            }
+            div.findDiv > table#foodTbl td.notFood {
+                color:rgba(248, 6, 6, 0.956);
+            }
+            div.findDiv > table#foodTbl {
+                width: 80%;
+                margin: auto;
+            }
         </style>
     </head>
     <body>
@@ -57,7 +67,8 @@
                         
                         나는 나에게 작은 손을 내밀어
                         눈물과 위안으로 잡는 최초의 악수.</pre>
-                        <div>
+                        <button id="slidingBtn">slideUp & Down</button>
+                        <div class="menuDiv">
                             <button class="contentsBtn">1</button>
                             <button class="contentsBtn">2</button>
                             <ul class="menuItems">
@@ -67,6 +78,30 @@
                             </ul>
                             <ul class="targetItems">
                             </ul>
+                        </div>
+                        <div class="findDiv">
+                            <button id="foodBtn">td 태그의 색깔을 변경</button>
+                            <table id="foodTbl">
+                                <thead>
+                                    <tr>
+                                        <th>컬럼1</th>
+                                        <th>컬럼2</th>
+                                        <th>컬럼3</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>고양이</td>
+                                        <td>강아지</td>
+                                        <td>햄스터</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="food">생선</td>
+                                        <td class="food">고기</td>
+                                        <td class="food">해바라기씨</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                 </article>
             </section>
