@@ -6,16 +6,34 @@
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script>
         <script>
+            // DOM 로드가 완료 된 것을 보장 해 줌
             $(function(){
                 $("#testBtn").click(function(){
-                    alert(1111);
+                    alert("clicked");
                 });
+                // $변수명
+                let $btn = $("#applyBtn");
+                $btn.click(function(){
+                    alert("apply button clicked");
+                });
+                console.log($("div.contents").find("div"));
             });
-        </script>    
+        </script>
+        <style>
+            .applyBtn {
+                background-color: aqua;
+            }
+        </style>    
     </head>
     <body>
         <div>
             <button id="testBtn">버튼</button>
+            <button id="applyBtn">버튼</button>
+        </div>
+        <div class="contents">
+            <div class="innerDiv">
+                <div class="nestedDiv"></div>
+            </div>
         </div>
     </body>
 </html>
