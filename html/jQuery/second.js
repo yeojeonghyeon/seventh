@@ -10,6 +10,19 @@ $(function(){
         this.classList.remove("mainContentsHover");
         // $(this).removeClass("mainContentsHover");
     });
+
+    let $buttons = $("button.contentsBtn"); // jQuery 유사배열 형태로 반환
+    $buttons.first().click(function(){
+        alert(this.innerText);
+    });
+    $buttons.last().click(function(){
+        alert(this.innerText);
+    });
+
+    let $lis = $("ul.menuItems > li");
+    $lis.each(function(index, element){
+        element.innerText = `${index} ${element.innerText}`;
+    });
 });
 // $(document).ready(function(){
 // });
