@@ -11,9 +11,17 @@ router.get('/list', function(req, res){
     res.json(result);
 });
 
+// closure
+const userInfoArr = {list:[]};
 router.post('/register', function(req, res){
     console.log(req.body);
-    res.send(req.body);
+    const {name, birth} = req.body; // 객체 비구조화 구문, const name = req.body.name, const birth = req.body.birth
+    userInfoArr.list.push({name, birth}); // {name: name, birth: birth}
+    res.json(userInfoArr);
+});
+
+router.get('/addedList', function(req, res){
+    res.json(userInfoArr);
 });
 
 module.exports = router;

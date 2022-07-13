@@ -31,9 +31,29 @@
                 $("#memberBtn").on("click", function(){
                     $.get('/member/list', function(data, status){
                         if (status == 'success'){
+                            var result = data.result;
+                            var tagStr = '';
                             // data.result 결과 array
+                            for(let item of result){
+                                tagStr += `<li>${item.userName}</li>`;
+                            }
+                            $ul.append(tagStr);
                         }
                     });
+                });
+
+                let $form = $("#searchForm");
+                let $txtArea = $("#addedItemArea");
+                $("#sendBtn").on("click", function(){
+                    $.post('/member/register', $form.serialize(), function(data, status){
+                        if(status == 'success'){
+                            let text = data.list.map((ele, index)=>{
+                                return `이름 : ${ele.name}, 생일 : ${ele.birth}`; 
+                            }).join(`\r\n`);
+                            $txtArea.text(text);
+                        }
+                    });
+                    event.preventDefault();
                 });
             });
         </script>
@@ -73,12 +93,15 @@
             <button id="memberBtn">멤버 리스트 가져오기</button>
             <ul class="memberList">
             </ul>
-            <form>
+            <form id="searchForm">
                 <input type="text" name="name">
                 <input type="text" name="birth">
                 <br>
                 <button id="sendBtn">post 보내기</button>
             </form>
+        </div>
+        <div>
+            <textarea id="addedItemArea"></textarea>
         </div>
     </body>
 </html>
