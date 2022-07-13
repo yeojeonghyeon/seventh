@@ -55,6 +55,19 @@
                     });
                     event.preventDefault();
                 });
+
+                $.fn.userMethod = function(){
+                    this.css({backgroundColor:`pink`});
+                    return this;
+                };
+
+                $.fn.extend({greenify: function(){
+                    this.css({backgroundColor:`green`});
+                    return this;
+                }});
+
+                $("input").userMethod();
+                $("div").greenify();
             });
         </script>
         <style>
