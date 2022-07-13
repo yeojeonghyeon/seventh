@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery 네번째</title>
+        <script src="jquery-3.6.0.js"></script>
+        <script>
+            // DOM 로딩 보장
+            $(function(){
+                var $inputs = $("div.container > input[type=text].testIpt");
+                $("#changeBtn").on("click", function(e){
+                    try{
+                    // console.log(e); // event, jQuery 이벤트 객체
+                    // console.log(this);
+                    // console.log($inputs);
+                        if ( $inputs.length == 2 ){
+                            const temp = $inputs[0].value;
+                            $inputs[0].value = $inputs[1].value;
+                            $inputs[1].value = temp;
+                        }
+                    }catch(ex){
+                        console.log(ex);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <input type="text" class="testIpt" placeholder="첫번째입력창">
+            <input type="text" class="testIpt" placeholder="두첫번째입력창">
+            <br>
+            <button id="changeBtn">값을 바꾼다</button>
+        </div>
+    </body>
+</html>
