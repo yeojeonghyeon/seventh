@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-3.6.0.js"></script>
+        <script>
+            $(function(){
+                $("#singerBtn").on("click", function(){
+                    $.ajax({
+                        dataType: "json",
+                        url: "/getSingers",
+                        data: {},
+                        success: function(data, textStatus, jqXHR){
+                            console.log(data);
+                            console.log(textStatus);
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <table id="resultTbl">
+                <thead>
+                    <tr>
+                        <td>번호</td>
+                        <td>가수이름</td>
+                        <td>앨범수</td>
+                        <td>소속사</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <button id="singerBtn">가수리스트 가져오기</button>
+        </div>
+    </body>
+</html>
