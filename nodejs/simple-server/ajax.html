@@ -4,6 +4,7 @@
         <script src="node_modules/jquery/dist/jquery.js"></script>
         <script>
             $(function(){
+                let $tbody = $("#resultTbl > tbody");
                 $("#singerBtn").on("click", function(){
                     $.ajax({
                         dataType: "json",
@@ -12,6 +13,19 @@
                         success: function(data, textStatus, jqXHR){
                             console.log(data);
                             console.log(textStatus);
+                            if (textStatus == 'success') {
+                                let singers = data.singers;
+                                let wholeTag = '';
+                                for(let singer of singers){
+                                    wholeTag += `<tr>
+                                        <td>${singer.no}</td>
+                                        <td>${singer.singerName}</td>
+                                        <td>${singer.numOfAlbum}</td>
+                                        <td>${singer.company}</td>
+                                     </tr>`;
+                                }
+                                $tbody.append(wholeTag);
+                            }
                         }
                     });
                 });
