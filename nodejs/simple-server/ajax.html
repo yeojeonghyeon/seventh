@@ -9,10 +9,8 @@
                     $.ajax({
                         dataType: "json",
                         url: "/getSingers",
-                        data: {},
+                        data: {property:111},
                         success: function(data, textStatus, jqXHR){
-                            console.log(data);
-                            console.log(textStatus);
                             if (textStatus == 'success') {
                                 let singers = data.singers;
                                 let wholeTag = '';

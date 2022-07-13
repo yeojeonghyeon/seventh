@@ -33,10 +33,25 @@ app.get('/list', function(req, res){
 });
 
 app.get('/getSingers', function(req, res){
-    const result = {singers:[{no: 1, singerName: "BTS", numOfAlbum: 3, company: "하이브"},
-                             {no: 2, singerName: "아이유", numOfAlbum: 5, company: "이담엔터테인먼트"},
-                             {no: 3, singerName: "신승훈", numOfAlbum: 11, company: "도로시컴퍼니"}
-                            ]};
+    // http 서비스 요청 방식, get, post
+    // put, delete
+    // get일 경우 req.query
+    // post일 경유 req.body
+    // get ; http://localhost:3000/getSingers?name=이승훈&age=15
+    // post ; data header
+    console.log(req.query);
+    let result;
+    if (req.query.type == 'singer'){
+        result = {result:[{no: 1, name: "BTS", numOfAlbum: 3, company: "하이브"},
+                            {no: 2, name: "아이유", numOfAlbum: 5, company: "이담엔터테인먼트"},
+                            {no: 3, name: "신승훈", numOfAlbum: 11, company: "도로시컴퍼니"}
+                        ]};
+    }else if (req.query.type == 'actor'){
+        result = {result:[{no: 1, name: "송강호", numOfAlbum: 3, company: "써브라임"},
+                            {no: 2, name: "이정재", numOfAlbum: 5, company: "아티스트 컴퍼니"},
+                            {no: 3, name: "최민식", numOfAlbum: 11, company: "씨제스엔터테인먼트"}
+                        ]};
+    }
     res.json(result);
 });
 
