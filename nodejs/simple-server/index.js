@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path'); // 추가
+const userRouter = require('./route');
 const port = 3000;
 
 //
