@@ -27,6 +27,14 @@
                         }
                     });
                 });
+                let $ul = $("ul.memberList");
+                $("#memberBtn").on("click", function(){
+                    $.get('/member/list', function(data, status){
+                        if (status == 'success'){
+                            // data.result 결과 array
+                        }
+                    });
+                });
             });
         </script>
         <style>
@@ -60,6 +68,17 @@
 
                 </tbody>
             </table>
+        </div>
+        <div class="member">
+            <button id="memberBtn">멤버 리스트 가져오기</button>
+            <ul class="memberList">
+            </ul>
+            <form>
+                <input type="text" name="name">
+                <input type="text" name="birth">
+                <br>
+                <button id="sendBtn">post 보내기</button>
+            </form>
         </div>
     </body>
 </html>

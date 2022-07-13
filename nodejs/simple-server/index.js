@@ -9,6 +9,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/node_modules', express.static(path.join(__dirname, '/node_modules'))); // 추가
 
+app.use('/member', userRouter);
+
 // 함수, 람다(lambda) 함수
 // ()=>{}
 app.get('/', (req, res)=>{
