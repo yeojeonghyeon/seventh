@@ -9,17 +9,17 @@
                     $.ajax({
                         dataType: "json",
                         url: "/getSingers",
-                        data: {property:111},
+                        data: {type: $("#searchType").val()},
                         success: function(data, textStatus, jqXHR){
                             if (textStatus == 'success') {
-                                let singers = data.singers;
+                                let result = data.result;
                                 let wholeTag = '';
-                                for(let singer of singers){
+                                for(let item of result){
                                     wholeTag += `<tr>
-                                        <td>${singer.no}</td>
-                                        <td>${singer.singerName}</td>
-                                        <td>${singer.numOfAlbum}</td>
-                                        <td>${singer.company}</td>
+                                        <td>${item.no}</td>
+                                        <td>${item.name}</td>
+                                        <td>${item.numOfAlbum}</td>
+                                        <td>${item.company}</td>
                                      </tr>`;
                                 }
                                 $tbody.append(wholeTag);
@@ -29,9 +29,24 @@
                 });
             });
         </script>
+        <style>
+            table#resultTbl {
+                background-color: beige;
+                width: 80%;
+                margin: auto;
+            }
+            table#resultTbl td, table#resultTbl th{
+                border: 1px solid rgb(169, 95, 95);
+            }
+        </style>
     </head>
     <body>
         <div class="container">
+            <select id="searchType">
+                <option value="singer">가수</option>
+                <option value="actor">배우</option>
+            </select>
+            <button id="singerBtn">가수리스트 가져오기</button>
             <table id="resultTbl">
                 <thead>
                     <tr>
@@ -45,7 +60,6 @@
 
                 </tbody>
             </table>
-            <button id="singerBtn">가수리스트 가져오기</button>
         </div>
     </body>
 </html>
