@@ -72,9 +72,9 @@
         let result = ld(x); // calling context
         console.log(result);
     }
-    // new 생성자(), 새로운 객체가 생성되고 새로 생선된 객체가 this에 바인딩
-    // 객체.함수 형태로 호출
-    // Function.prototype.apply, bind, call 함수를 사용하여 명시적으로 this 전달
+    // 1. new 생성자(), 새로운 객체가 생성되고 새로 생선된 객체가 this에 바인딩
+    // 2. 객체.함수 형태로 호출
+    // 3. Function.prototype.apply, bind, call 함수를 사용하여 명시적으로 this 전달
     // 람다 함수 calling context, 호출하고 있는 함수의 this
     let obj = {useLambda, x: 10};
     obj.useLambda(10);
@@ -99,4 +99,32 @@
         console.log(name, score);
     }
     destructuring({name: 'smith', score: 100});
+
+    // Enhanced Object property
+    // {} == new Object() 두 표현은 같다
+    let plainObj = {show: function(){
+        return this.score;
+    }, score: 150};
+    let result = plainObj.show(); // show는 property, 함수의 레퍼런스를 담고 있으면, method
+    let showRef = plainObj.show; // 함수 레퍼런스를 showRef 할당
+    result = showRef(); // this를 명시적으로 전달하지 않았음, global , browser 환경에서 실행 했으면 window
+    let otherObj = {showRef, plainObj}; // {showRef: showRef, plainObj: plainObj} //
+    result = otherObj.showRef(); // this <= otherObj
+    // new Function(); showRef == show
+    // show.__proto__ <= Function.prototype
+    let boundShowRef = showRef.bind(plainObj);
+    result = boundShowRef(); // 150
+    console.log(result);
+
+    let propertyName = 'url';
+    // property를 정의하는 자리에 [식별자] 형태로 정의 할 수 있음
+    // method, 함수명(){}
+    // {show(){}} 객체 내부의 show 함수의 외부 환경은 즉시실행 함수
+    let enhancedObjPro = {[propertyName]: `http://localhost:3000`,
+                          show(){
+                            return this[propertyName];
+                          }  
+                        };
+    result = enhancedObjPro.show();           
+    console.log(result);         
 })();
