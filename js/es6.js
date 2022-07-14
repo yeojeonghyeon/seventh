@@ -95,7 +95,7 @@
     console.log(mergedArr, spreadObj);
 
     function destructuring({name, score}){
-        // name, score, destructuring 함수의 식별자 ( 파라미터 )
+        // name, score ; destructuring 함수의 식별자 ( 파라미터 )
         console.log(name, score);
     }
     destructuring({name: 'smith', score: 100});
