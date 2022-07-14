@@ -123,8 +123,8 @@
     let enhancedObjPro = {[propertyName]: `http://localhost:3000`,
                           show(){
                             return this[propertyName];
-                          }  
-                        };
-    result = enhancedObjPro.show();           
-    console.log(result);         
+                          }};
+    propertyName = 'age';                    
+    result = enhancedObjPro.show(); //  enhancedObjPro['age'],            
+    console.log(result);
 })();
