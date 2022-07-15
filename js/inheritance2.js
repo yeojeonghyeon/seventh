@@ -43,3 +43,39 @@
 
     cat.speak();
 })();
+
+(function(){
+    class Circle {
+        constructor(radius) {
+          this.radius = radius; // 반지름
+        }
+        getDiameter() {
+          return 2 * this.radius;
+        }
+        getPerimeter() {
+          return 2 * Math.PI * this.radius;
+        }
+        getArea() {
+          return Math.PI * Math.pow(this.radius, 2);
+        }
+    }
+    class Cylinder extends Circle{
+        constructor(radius, height){
+            super(radius);
+            this.height = height;
+        }
+        getArea(){
+            return (this.height*super.getPerimeter()) * (2*super.getArea());
+        }
+        getVolume(){
+            return super.getArea() * this.height;
+        }
+        getRadius(){
+            return this.radius;
+        }
+    }
+    // 생성자 빌려 쓰기를 통해서, 
+    let cylinder = new Cylinder(5, 10);
+    console.log(cylinder.getArea());
+    console.log(cylinder.getRadius());
+})();
