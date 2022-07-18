@@ -37,13 +37,11 @@ class NotOrderedPair<K, V extends Box> implements Pair<K, V>{
 	}
 	@Override
 	public K getKey() {
-		// TODO Auto-generated method stub
 		return key;
 	}
 
 	@Override
 	public V getValue() {
-		// TODO Auto-generated method stub
 		return value;
 	}
 	
@@ -89,7 +87,7 @@ class PairDemo{
 		
 		System.out.println(PairDemo.<String, Box>compare(sb1, sb2));
 		
-		NotOrderedPair
+		NotOrderedPair<String, Box> nop = new NotOrderedPair<>("key", new Box(1));
 	}
 	
 	public static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2){
