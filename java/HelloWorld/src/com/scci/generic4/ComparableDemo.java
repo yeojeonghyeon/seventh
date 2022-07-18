@@ -3,6 +3,7 @@ package com.scci.generic4;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class ComparableDemo {
@@ -51,6 +52,19 @@ public class ComparableDemo {
 		
 		List<Person> resultLst = ComparableDemo.test(personLst, predicate);
 		// resultLst, enhanced for를 사용하여 각 요소의 birth를 출력 하라
+		for(Person p : resultLst) {
+			System.out.println(p.birth);
+		}
+		// Consumer<? extends Person> action
+		resultLst.forEach(new Consumer<Person>() {
+			public void accept(Person p) {
+				System.out.println(p.birth);
+			}
+		});
+		
+		resultLst.forEach((p)->System.out.println(p.birth));
+		
+		//resultLst.forEach(System.out::println);
 	}
 	
 	public static <T extends Comparable<T>> int countGreaterThan(T[] arr, T basis){
