@@ -1,8 +1,8 @@
 package com.scci.concurrency;
 
 public class Counter{
-	int cnt;
-	int max;
+	private int cnt;
+	private int max;
 	public Counter(int initialCnt, int max){
 		this.cnt = initialCnt;
 		this.max = max;
