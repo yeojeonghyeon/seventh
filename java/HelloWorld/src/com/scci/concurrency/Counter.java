@@ -1,8 +1,10 @@
 package com.scci.concurrency;
 
 public class Counter{
+	private int temp = 0;
 	private int cnt;
 	private int max;
+	private Object lock = new Object();
 	public Counter(int initialCnt, int max){
 		this.cnt = initialCnt;
 		this.max = max;
@@ -18,6 +20,21 @@ public class Counter{
 	public synchronized boolean isDone() {
 		if ( max == cnt ) return true;
 		else return false;
+	}
+	
+	public void foo() {
+		// lock 객체에 락을 건다
+		// lock 객체를 사용한 비동기 블럭은 전부 락이 풀리기 전까지 진입 대기
+		synchronized(lock) {
+			temp = temp + 1;
+			System.out.println(temp + " " +Thread.currentThread().getName() + "foo");
+		}
+	}
+	public void zoo() {
+		synchronized(lock) {
+			temp = temp - 1;
+			System.out.println(Thread.currentThread().getName() + "zoo");		
+		}
 	}
 }
 
