@@ -11,7 +11,8 @@ public class Counter{
 	// 동기화
 	// monitor를 획득한 쓰레드가 getCnt 함수 내부로 진행 되고
 	// 함수를 다 사용하면 monitor를 반환
-	public synchronized int getCnt() {
+	public synchronized int getCnt() throws Exception {
+		if ( max == cnt ) throw new Exception("exceed");
 		return ++cnt;
 	}
 	public synchronized boolean isDone() {
@@ -28,8 +29,13 @@ class UseCounterThread implements Runnable{
 	@Override
 	public void run() {
 		int cnt;
-		while(!counter.isDone()) {
-			cnt = counter.getCnt();
+		while(true) {
+			try {
+				cnt = counter.getCnt();
+			} catch (Exception e) {
+				e.printStackTrace();
+				break;
+			}
 			System.out.println(cnt + " " + Thread.currentThread().getName());
 		}
 	}
