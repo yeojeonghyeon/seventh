@@ -78,6 +78,9 @@ class QueueDemo{
 		BlockingQueue<String> queue = new BlockingQueue<String>(10);
 		// Consumer 클래스와 Producer 클래스를 사용하여 t1, t2 쓰레드를 생성해서 Runnable 상태로 만들어라
 		
-		
+		Thread t1 = new Thread(new Consumer(queue));
+		Thread t2 = new Thread(new Producer(queue));
+		t1.start();
+		t2.start();
 	}
 }
