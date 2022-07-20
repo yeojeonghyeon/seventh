@@ -1,4 +1,4 @@
-package com.scci.trainning;
+package com.scci.training;
 
 public class RunnableDemo {
 	// ExecutorService를 사용해서 풀을 만들고
