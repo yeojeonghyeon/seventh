@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Promise 연습!</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                var dpObj = document.querySelector("#dpIpt");
+                // 두번째 파라미터의 시간이 흐른 뒤 콜백 함수 실행
+                var count = 0;
+                setTimeout(()=>{
+                    dpObj.value = ++count;
+                }, 2000);
+                var logObj = document.querySelector("#log");
+                document.querySelector("#createPromiseBtn").addEventListener("click", function(){
+                    // 프로 생성자로 객체를 생성하면
+                    // 내부코드 실행이 됩니다.
+                    // aynsc, await 
+                    var promise = new Promise((resolve, reject)=>{
+                        setTimeout(()=>{
+                            try{
+                                resolve(++count);
+                            }catch(e){
+                                reject(e);
+                            }
+                        }, 2000);
+                    });
+                    // 비동기 함수, chain화 시킬 수 있음.
+                    promise.then((value)=>{
+                        logObj.innerText = `${logObj.innerText}\n\r ${value}\n\r`; 
+                    }, (e)=>{
+                        console.log(e);
+                    });
+                    logObj.innerText += "나는 프라미스랑 상관없이 실행된다.";
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <input id="dpIpt" type="text" placeholder="여기에 값을 표시">
+            <button id="createPromiseBtn">Promise 생성!!</button>
+            <textarea id="log"></textarea>
+        </div>
+    </body>
+</html>

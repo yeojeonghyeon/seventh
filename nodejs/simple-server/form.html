@@ -92,9 +92,46 @@
                 <button id="addListBtn">서버에서 리스트 가져오기</button>
                 <ul id="listUl"></ul>
             </div>
+            <div>
+                <button id="promiseBtn">promise 비동기 데이터 가져오기</button>
+                <ul id="promiseUl"></ul>
+            </div>
         </div>
         <button>11</button>
         <script>
+            const promiseAjax = (method, url, payload) => {
+                return new Promise((resolve, reject) => {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open(method, url);
+                    xhr.setRequestHeader('Content-type', 'application/json');
+                    xhr.send(JSON.stringify(payload));
+
+                    xhr.onreadystatechange = function () {
+                    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+
+                    if (xhr.status >= 200 && xhr.status < 400) {
+                        resolve(xhr.response); // Success!
+                    } else {
+                        reject(new Error(xhr.status)); // Failed...
+                    }
+                    };
+                });
+            };
+            var promiseUl = document.querySelector("#promiseUl");
+            document.querySelector("#promiseBtn").addEventListener("click", function(){
+                promiseAjax().then((response)=>{
+                    JSON.parse(response);
+                }).then((result)=>{
+                    for(const item of result.items){
+                            const liObj = document.createElement('li');
+                            liObj.innerText = `${item}`;
+                            promiseUl.appendChild(liObj);
+                        }
+                }).catch((e)=>{
+                    console.log(e);
+                });
+            });
+
             document.querySelector("#submitBtn").addEventListener("click", function(){
                 // ******* 이벤트 핸들러의 this는 이벤트가 발생한 DOM 객체를 의미함
                 // form 하위(자손)의 모든 input 태그(DOM)을 조회(얻어 오기)
