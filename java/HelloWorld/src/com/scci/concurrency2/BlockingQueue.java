@@ -1,9 +1,7 @@
 package com.scci.concurrency2;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.stream.Stream;
 
 public class BlockingQueue<T> {
 	Queue<T> queue = new LinkedList<T>();
