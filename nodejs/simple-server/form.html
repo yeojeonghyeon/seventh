@@ -119,7 +119,7 @@
             };
             var promiseUl = document.querySelector("#promiseUl");
             document.querySelector("#promiseBtn").addEventListener("click", function(){
-                promiseAjax().then((response)=>{
+                promiseAjax('GET', '/list', {}).then((response)=>{
                     JSON.parse(response);
                 }).then((result)=>{
                     for(const item of result.items){
