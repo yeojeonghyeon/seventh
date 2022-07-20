@@ -14,22 +14,24 @@ public class RunnableDemo {
 		// Future 클래스를 사용해서 콘솔에 반환값을 출력 하시오
 		ExecutorService executor = Executors.newScheduledThreadPool(5);
 		// ctrl + shift + o
-		Callable<Integer> callable = new Callable<Integer>() {
-			@Override
-			public Integer call() {
-				return 100*(100+1)/2;
-			}
-		};
-		Future<Integer> future1 = executor.submit(callable);
+//		Callable<Integer> callable = new Callable<Integer>() {
+//			@Override
+//			public Integer call() {
+//				return 100*(100+1)/2;
+//			}
+//		};
+//		Future<Integer> future1 = executor.submit(callable);
 		Future<Integer> future2 = executor.submit(new SumAs(1000));
 		try {
 			// main thread 대기 상태, callable 코드가 실행 완료 되서 반환 할 때 까지 
-			System.out.println(future1.get());
+//			System.out.println(future1.get());
 			// main thread 대기 상태, callable 코드가 실행 완료 되서 반환 할 때 까지 
 			System.out.println(future2.get());
 		} catch (InterruptedException | ExecutionException e) {
 			System.out.println(e.getMessage());
 		}
+		
+		executor.shutdown();
 	}
 }
 class SumAs implements Callable<Integer> {
