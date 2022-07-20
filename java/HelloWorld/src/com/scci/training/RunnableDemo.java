@@ -16,9 +16,12 @@ public class RunnableDemo {
 	public static void main(String[] args) {
 		ExecutorService executor = Executors.newFixedThreadPool(10);
 		Future<Integer> future = executor.submit(new SumAs(100));
-		executor.submit(new GeometricSequence(2, 1, 20));
+		executor.submit(new GeometricSequence(2, 1, 5));
+		Future<List<Integer>> seqFuture = executor.submit(new GeometricSequenceArray(2, 1, 5));
 		try {
 			System.out.println(future.get());
+			List<Integer> lst = seqFuture.get();
+			lst.forEach(System.out::println);
 		} catch (InterruptedException | ExecutionException e) {
 			System.out.println(e.getMessage());
 		}
@@ -68,10 +71,12 @@ class GeometricSequenceArray implements Callable<List<Integer>> {
 	@Override
 	public List<Integer> call() {
 		List<Integer> lst = new ArrayList<Integer>();
-//		int sequence;
-//		for(int i=0; i<count; i++) {
-//			sequence = (int) (initial*Math.pow(ratio, i));
-//			System.out.println(sequence);
-//		}
+		int sequence;
+		// 등비수열을 생성하고, 리스트에 담아서 반환
+		for(int i=0; i<count; i++) {
+			sequence = (int) (initial*Math.pow(ratio, i));
+			lst.add(sequence);
+		}
+		return lst;
 	}
 }
