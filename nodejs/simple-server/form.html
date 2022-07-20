@@ -120,9 +120,11 @@
             var promiseUl = document.querySelector("#promiseUl");
             document.querySelector("#promiseBtn").addEventListener("click", function(){
                 promiseAjax('GET', '/list', {}).then((response)=>{
-                    JSON.parse(response);
+                    // JSON.parse, string {"list":["javascript","java","database","spring","reactjs","html5"]}
+                    // javascript object 형태로 변형
+                    return JSON.parse(response);
                 }).then((result)=>{
-                    for(const item of result.items){
+                    for(const item of result.list){
                             const liObj = document.createElement('li');
                             liObj.innerText = `${item}`;
                             promiseUl.appendChild(liObj);
