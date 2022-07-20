@@ -13,7 +13,7 @@ public class Consumer implements Runnable{
 				item = queue.take();
 				System.out.println("Consumer take : " + item);
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+//				e.printStackTrace();
 				break;
 			}
 		}

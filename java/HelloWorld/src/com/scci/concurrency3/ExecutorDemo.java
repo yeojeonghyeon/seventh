@@ -62,8 +62,9 @@ public class ExecutorDemo {
 		executor.execute(consumer);
 		executor.execute(producer);
 		
+		// main thread를 2초간 대기
 		Thread.sleep(2000);
 		
-		List<Runnable> lst = executor.shutdownNow();
+		executor.shutdownNow();
 	}
 }

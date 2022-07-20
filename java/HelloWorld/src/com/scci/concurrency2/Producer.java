@@ -19,7 +19,7 @@ public class Producer implements Runnable{
 				System.out.println("Producer put : " + item);
 				queue.put(item);
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+//				e.printStackTrace();
 				break;
 			}
 		}
