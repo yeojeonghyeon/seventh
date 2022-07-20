@@ -30,49 +30,6 @@ public class BlockingQueue<T> {
 	}
 }
 
-class Consumer implements Runnable{
-	BlockingQueue<String> queue;
-	public Consumer(BlockingQueue<String> queue) {
-		this.queue = queue;
-	}
-	@Override
-	public void run() {
-		String item;
-		while(true) {
-			try {
-				item = queue.take();
-				System.out.println("Consumer take : " + item);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
-}
-
-class Producer implements Runnable{
-	BlockingQueue<String> queue;
-	Stream<Integer> stream;
-	public Producer(BlockingQueue<String> queue) {
-		this.queue = queue;
-		stream = Stream.iterate(0, n -> n + 1);
-	}
-	@Override
-	public void run() {
-		Iterator<Integer> iter = stream.iterator();
-		while(true) {
-			try {
-				String item = iter.next().toString();
-				System.out.println("Producer put : " + item);
-				queue.put(item);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
-}
-
 class QueueDemo{
 	public static void main(String[] args) {
 		BlockingQueue<String> queue = new BlockingQueue<String>(10);
