@@ -7,7 +7,7 @@
                 let txtArea = document.querySelector("#productTxtArea");
                 let asyncTxtArea = document.querySelector("#productAsyncTxtArea");
                 document.querySelector("#fetchBtn").addEventListener("click", function(){
-                    fetch('/member/product/1').then((res)=>res.josn())
+                    fetch('/member/product/1').then((res)=>res.json())
                         .then((product)=>{
                             txtArea.innerText = `${product.productName}`;
                         });
@@ -19,7 +19,7 @@
 
                 async function getData(){
                     let res = await fetch('/member/product/2');
-                    let product = res.josn();
+                    let product = res.json();
                     asyncTxtArea.innerText = `${product.productName}`;
                 }
             });
