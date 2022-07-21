@@ -7,10 +7,10 @@
                 let txtArea = document.querySelector("#productTxtArea");
                 let asyncTxtArea = document.querySelector("#productAsyncTxtArea");
                 document.querySelector("#fetchBtn").addEventListener("click", function(){
-                    fetch('/member/product/1').then((res)=>{
-                        console.log(res);
-                        txtArea.innerText = res;
-                    });
+                    fetch('/member/product/1').then((res)=>res.josn())
+                        .then((product)=>{
+                            txtArea.innerText = `${product.productName}`;
+                        });
                 });
 
                 document.querySelector("#fetchAsyncBtn").addEventListener("click", function(){
@@ -19,8 +19,8 @@
 
                 async function getData(){
                     let res = await fetch('/member/product/2');
-                    console.log(res);
-                    asyncTxtArea.innerText = res;
+                    let product = res.josn();
+                    asyncTxtArea.innerText = `${product.productName}`;
                 }
             });
         </script>
