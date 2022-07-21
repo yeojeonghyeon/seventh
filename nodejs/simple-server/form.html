@@ -107,13 +107,12 @@
                     xhr.send(JSON.stringify(payload));
 
                     xhr.onreadystatechange = function () {
-                    if (xhr.readyState !== XMLHttpRequest.DONE) return;
-
-                    if (xhr.status >= 200 && xhr.status < 400) {
-                        resolve(xhr.response); // Success!
-                    } else {
-                        reject(new Error(xhr.status)); // Failed...
-                    }
+                        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+                        if (xhr.status >= 200 && xhr.status < 400) {
+                            resolve(xhr.response); // Success!
+                        } else {
+                            reject(new Error(xhr.status)); // Failed...
+                        }
                     };
                 });
             };
