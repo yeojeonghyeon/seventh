@@ -24,6 +24,22 @@ router.get('/addedList', function(req, res){
     res.json(userInfoArr);
 });
 
+// url : http://localhost:3000/member/product
+router.get('/product', function(req, res){
+    res.sendFile(__dirname + '/product.html');
+});
+// client fetch 함수를 통해서 호출
+// url : http://localhost:3000/member/product/1
+let result = {list:[{productId: '1', productName: 'tv', price: 3000000, menufacturer: "삼성"},
+                    {productId: '2', productName: '냉장고', price: 5500000, menufacturer: "LG"},
+                    {productId: '3', productName: '청소기', price: 1100000, menufacturer: "Dyson"}]};
+router.get('/product/:productId', function(req, res){
+    // const productId = req.params.productId;
+    const { productId } = req.params;
+    let productArr = result.list.find((item)=>item.productId==productId);
+    res.json(productArr[0]);
+});
+
 module.exports = router;
 
 
