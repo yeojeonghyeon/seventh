@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>fetch 함수를 이용한 서비스 호출</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                let txtArea = document.querySelector("#productTxtArea");
+                let asyncTxtArea = document.querySelector("#productAsyncTxtArea");
+                document.querySelector("#fetchBtn").addEventListener("click", function(){
+                    fetch('/member/product/1').then((res)=>{
+                        console.log(res);
+                        txtArea.innerText = res;
+                    });
+                });
+
+                document.querySelector("#fetchAsyncBtn").addEventListener("click", function(){
+                    getData();
+                });
+
+                async function getData(){
+                    let res = await fetch('/member/product/2');
+                    console.log(res);
+                    asyncTxtArea.innerText = res;
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <button id="fetchBtn">fetch 비동기 함수 호출</button>
+            <textarea id="productTxtArea"></textarea>
+        </div>
+        <div class="container">
+            <button id="fetchAsyncBtn">async await 사용 fetch 비동기 함수 호출</button>
+            <textarea id="productAsyncTxtArea"></textarea>
+        </div>
+    </body>
+</html>
