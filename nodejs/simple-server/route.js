@@ -40,6 +40,16 @@ router.get('/product/:productId', function(req, res){
     res.json(productArr);
 });
 
+let classInfo = {classes:[{name: "math", personNo: 30, participant:["김개똥","홍일점","김영희","이산"]},
+                          {name: "kor", personNo: 20, participant:["smith","john","david","hwak"]}]};
+// url : http://localhost:3000/member/class
+// class.html > 클라이언트로 보낸다
+
+// client fetch 함수를 통해서 호출
+// url : http://localhost:3000/member/class/math
+// url : http://localhost:3000/member/class/kor
+// classes 배열에서 name 프로퍼티에 값을 찾아서 클라이언트로 응답을 보낸다
+
 module.exports = router;
 
 
