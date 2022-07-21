@@ -23,6 +23,14 @@
                     const response = await fetch('/member/product/2');
                     return response.json();
                 }
+
+                let textArea = document.querySelector("#textArea");
+                document.querySelector("#btn").addEventListener("click", async ()=>{
+                    const response = await fetch('/member/product/3');
+                    response.json().then((product)=>{
+                        textArea.innerText = `${product.productName}`;
+                    });
+                });
             });
         </script>
     </head>
@@ -34,6 +42,10 @@
         <div class="container">
             <button id="fetchAsyncBtn">async await 사용 fetch 비동기 함수 호출</button>
             <textarea id="productAsyncTxtArea"></textarea>
+        </div>
+        <div class="container">
+            <button id="btn">async handler</button>
+            <textarea id="textArea"></textarea>
         </div>
     </body>
 </html>
