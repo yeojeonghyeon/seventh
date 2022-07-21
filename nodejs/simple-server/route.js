@@ -37,7 +37,6 @@ router.get('/product/:productId', function(req, res){
     // const productId = req.params.productId;
     const { productId } = req.params;
     let productArr = result.list.find((item)=>item.productId==productId);
-    console.log(productArr);
     res.json(productArr);
 });
 
