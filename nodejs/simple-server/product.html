@@ -24,13 +24,20 @@
                     return response.json();
                 }
 
-                // 
+                // event handler 실행 되는 도중에 await 만나서 대기 상태, 반환
+                // event loop에서 새로운 작업을 꺼내서 진행
+                // await 문장이 실행이 완료 되었다고 가정 했을 경우, run-time이 idle한 상태
                 let textArea = document.querySelector("#textArea");
                 document.querySelector("#btn").addEventListener("click", async ()=>{
                     const response = await fetch('/member/product/3');
                     response.json().then((product)=>{
                         textArea.innerText = `${product.productName}`;
                     });
+                });
+
+                document.querySelector("#infiniteLoopBtn").addEventListener("click", function(){
+                    while(true){
+                    }
                 });
             });
         </script>
@@ -48,5 +55,6 @@
             <button id="btn">async handler</button>
             <textarea id="textArea"></textarea>
         </div>
+        <button id="infiniteLoopBtn">무한루프</button>
     </body>
 </html>
