@@ -14,13 +14,14 @@
                 });
 
                 document.querySelector("#fetchAsyncBtn").addEventListener("click", function(){
-                    getData();
+                    getData().then((product)=>{
+                        asyncTxtArea.innerText = `${product.productName}`;
+                    });
                 });
 
                 async function getData(){
-                    let res = await fetch('/member/product/2');
-                    let product = res.json();
-                    asyncTxtArea.innerText = `${product.productName}`;
+                    const response = await fetch('/member/product/2');
+                    return response.json();
                 }
             });
         </script>
