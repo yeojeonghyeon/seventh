@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: rgb(175, 229, 223);
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+            form {
+                background-color: lightblue;
+                border-style: groove;
+                border-radius: 5px;
+                padding: 10px;
+                margin: 20px;
+                width: 50%;
+            }
+
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 20px 0;
+                display: inline-block;
+                border: none;
+                background: #f1f1f1;
+            }
+
+            div.container select {
+                margin: 5px 0 20px 0;
+            }
+            
+            div.container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            div.container > div {
+                background-color: lightblue;
+                border-style: groove;
+                border-radius: 5px;
+                padding: 10px;
+                margin: 20px;
+                width: 50%;
+            }
+
+            .registerbtn {
+                background-color: #04AA6D;
+                color: white;
+                padding: 16px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                opacity: 0.9;
+            }
+
+            .registerbtn:hover {
+                opacity: 1;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                document.querySelector("#addListBtn").addEventListener("click", function(){
+                    
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <select name="sexual">
+                    <option value="kor">kor</option>
+                    <option value="math">math</option>
+                </select>
+                <button id="addListBtn">서버에서 리스트 가져오기</button>
+                <ul id="listUl"></ul>
+            </div>
+        </div>
+        <button>11</button>
+    </body>
+</html>

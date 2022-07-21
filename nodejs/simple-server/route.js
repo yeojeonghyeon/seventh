@@ -34,7 +34,6 @@ let result = {list:[{productId: '1', productName: 'tv', price: 3000000, menufact
                     {productId: '2', productName: '냉장고', price: 5500000, menufacturer: "LG"},
                     {productId: '3', productName: '청소기', price: 1100000, menufacturer: "Dyson"}]};
 router.get('/product/:productId', function(req, res){
-    // const productId = req.params.productId;
     const { productId } = req.params;
     let productArr = result.list.find((item)=>item.productId==productId);
     res.json(productArr);
@@ -49,6 +48,14 @@ let classInfo = {classes:[{name: "math", personNo: 30, participant:["김개똥",
 // url : http://localhost:3000/member/class/math
 // url : http://localhost:3000/member/class/kor
 // classes 배열에서 name 프로퍼티에 값을 찾아서 클라이언트로 응답을 보낸다
+router.get('/class', function(req, res){
+    req.sendFile(__dirname + '/class.html');
+});
+router.get('/class/:className', function(req, res){
+    const { className } = req.params;
+    const item = classInfo.classes.find(item=>item.name==className);
+    res.json(item);
+});
 
 module.exports = router;
 
