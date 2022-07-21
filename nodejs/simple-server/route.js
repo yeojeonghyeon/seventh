@@ -49,7 +49,7 @@ let classInfo = {classes:[{name: "math", personNo: 30, participant:["김개똥",
 // url : http://localhost:3000/member/class/kor
 // classes 배열에서 name 프로퍼티에 값을 찾아서 클라이언트로 응답을 보낸다
 router.get('/class', function(req, res){
-    req.sendFile(__dirname + '/class.html');
+    res.sendFile(__dirname + '/class.html');
 });
 router.get('/class/:className', function(req, res){
     const { className } = req.params;

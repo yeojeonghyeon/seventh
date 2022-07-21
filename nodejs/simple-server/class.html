@@ -65,8 +65,21 @@
         </style>
         <script>
             document.addEventListener("DOMContentLoaded", function(){
+                let classType = document.querySelector("#classInfoSel");
+                let ulObj = document.querySelector("#listUl");
                 document.querySelector("#addListBtn").addEventListener("click", function(){
-                    
+                    fetch(`/member/class/${classType.value}`)
+                        .then(res=>res.json())
+                        .then(item=>{
+                            let htmlStr = '';
+                            for(let person of item.participant){
+                                // let liObj = document.createElement('li');
+                                // liObj.innerText = person;
+                                // ulObj.appendChild(liObj);
+                                htmlStr = htmlStr + `<li>${person}</li>`;
+                            }
+                            ulObj.innerHTML = htmlStr;
+                        });
                 });
             });
         </script>
@@ -74,7 +87,7 @@
     <body>
         <div class="container">
             <div>
-                <select name="sexual">
+                <select id="classInfoSel">
                     <option value="kor">kor</option>
                     <option value="math">math</option>
                 </select>
@@ -82,6 +95,5 @@
                 <ul id="listUl"></ul>
             </div>
         </div>
-        <button>11</button>
     </body>
 </html>
