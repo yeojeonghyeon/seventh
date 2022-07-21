@@ -24,4 +24,14 @@ promise2.then((message)=>{
     console.log(e);
 });
 
+var promise3 = promise(3000, '세번째 프라미스');
+promise3.then((message)=>{
+    console.log(message);
+    return new Promise((resolve, reject)=>{
+        resolve({name:"홍길동", message: message});
+    });
+}).then((result)=>{
+    console.log(result);
+});
+
 console.log('step 2');
