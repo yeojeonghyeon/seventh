@@ -51,6 +51,7 @@ let classInfo = {classes:[{name: "math", personNo: 30, participant:["김개똥",
 router.get('/class', function(req, res){
     res.sendFile(__dirname + '/class.html');
 });
+
 router.get('/class/:className', function(req, res){
     const { className } = req.params;
     const item = classInfo.classes.find(item=>item.name==className);

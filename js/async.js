@@ -12,7 +12,9 @@ async function useAwait(){
             resolve(100);
         }, 2000);
     });
+    // 결과값은 resolved or rejected
     let result = await promise; // 대기상태
+    console.log(result);
     return result;
 }
 
