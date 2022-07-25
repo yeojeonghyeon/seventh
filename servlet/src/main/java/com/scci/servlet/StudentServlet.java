@@ -16,7 +16,8 @@ public class StudentServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String clsType = request.getParameter("clsType");
 		List<Student> result = getStudents(clsType);
-		// "result"이름으로 result를 저장 
+		// "result"이름으로 result를 저장, key, value
+		// 꺼낼 때는 "result"로 꺼내면 됨.
 		request.setAttribute("result", result);
 		RequestDispatcher rd = request.getRequestDispatcher("views/studentView.jsp");
 		rd.forward(request, response);
