@@ -1,13 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"></link>
+<script src="${pageContext.request.contextPath}/js/scripting.js" defer></script>
 </head>
 <%
+	/* jsp 내부에 클래스를 사용하기 위해서는 import 해야 함  */
+	List<Employee> list;
 	Employee[] employees = new Employee[]{
 			new Employee("방탄소년단", "여성청소년계", "경사", true),
 			new Employee("아이유", "경리과", "부장", true),
@@ -32,12 +36,12 @@
 			<%
 				for(Employee emp : employees){
 			%>		
-				<tr>
-					<td><%=emp.name%></td>
-					<td><%=emp.department%></td>
-					<td><%=emp.jobPosition%></td>
-					<td><%=emp.isCarOwner%></td>
-				</tr>	
+					<tr>
+						<td><%=emp.name%></td>
+						<td><%=emp.department%></td>
+						<td><%=emp.jobPosition%></td>
+						<td><%=emp.isCarOwner%></td>
+					</tr>	
 			<%	}
 			%>	
 			</tbody>
