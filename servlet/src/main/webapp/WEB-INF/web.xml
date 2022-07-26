@@ -30,6 +30,14 @@
 		<servlet-name>StudentServlet</servlet-name>
 		<url-pattern>/StudentServlet</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>LegacyServlet</servlet-name>
+		<servlet-class>com.scci.servlet.LegacyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LegacyServlet</servlet-name>
+		<url-pattern>/LegacyServlet</url-pattern>
+	</servlet-mapping>
 </web-app>
 
 
