@@ -7,7 +7,13 @@
 <title>Insert title here</title>
 </head>
 <%
-
+	Employee[] employees = new Employee[]{
+			new Employee("방탄소년단", "여성청소년계", "경사", true),
+			new Employee("아이유", "경리과", "부장", true),
+			new Employee("이승환", "경로우대과", "상무", false),
+			new Employee("유지태", "방송부", "경사", true),
+			new Employee("이달의소녀", "홍보부", "경사", false),
+	};
 %>
 <body>
 	<div>
@@ -21,6 +27,11 @@
 				</tr>
 			</thead>
 			<tbody>
+			<%
+				for(Employee emp : employees){
+					
+				}
+			%>	
 			</tbody>
 		</table>
 	</div>
