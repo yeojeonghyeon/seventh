@@ -24,6 +24,10 @@
 				<h4>LegacyServlet 호출</h4>
 				<form action="LegacyServlet" method="GET">
 					<!--  서버로 보낼 때 속성은 name 속성 값으로 구별 -->
+					<select name="showType">
+						<option value="stream">stream</option>
+						<option value="jsp">jsp</option>
+					</select>
 					<input type="number" name="firstOperand" required>
 					<input type="number" name="secondOperand" required>
 					<button type="submit">더하기!!</button>
