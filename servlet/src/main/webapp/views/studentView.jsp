@@ -38,10 +38,12 @@
 				</tr>
 			</thead>
 			<tbody>
+			<!-- 스크립팅 요소 중 scriptlet <%%>  -->
 			<%List<Student> lst = (List<Student>)request.getAttribute("result");
 			  for(Student student : lst){
 			%>
 				<tr>
+				<!-- 스크립팅 요소 중 expression -->
 					<td><%=student.getName()%></td>
 					<td><%=student.getAddr()%></td>
 					<td><%=student.getBirth()%></td>

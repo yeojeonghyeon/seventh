@@ -6,14 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-span {
-	color: brown;
-}
-</style>
+<!-- pageContext.request.contextPath http://localhost:8080/HelloWeb -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"></link>
 </head>
 <body>
-	<div>
+	<div class="container">
 		<span>${param.firstOperand}&#43;${param.secondOperand}&#61;${param.firstOperand+param.secondOperand}</span>
 	</div>
 </body>
