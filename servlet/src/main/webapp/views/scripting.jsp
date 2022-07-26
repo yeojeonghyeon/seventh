@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"></link>
 </head>
 <%
 	Employee[] employees = new Employee[]{
@@ -16,8 +17,9 @@
 	};
 %>
 <body>
-	<div>
-		<table>
+	<div class="container">
+		<h4>사원 정보 테이블</h4>
+		<table class="mainTable">
 			<thead>
 				<tr>
 					<th>이름</th>
@@ -29,8 +31,14 @@
 			<tbody>
 			<%
 				for(Employee emp : employees){
-					
-				}
+			%>		
+				<tr>
+					<td><%=emp.name%></td>
+					<td><%=emp.department%></td>
+					<td><%=emp.jobPosition%></td>
+					<td><%=emp.isCarOwner%></td>
+				</tr>	
+			<%	}
 			%>	
 			</tbody>
 		</table>

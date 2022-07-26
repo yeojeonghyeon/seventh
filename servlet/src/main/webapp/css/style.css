@@ -1,5 +1,32 @@
 @charset "UTF-8";
 div.container{
-	background-color: lightgray;
+	/* background-color: lightgray; */
 	text-align: center;
+}
+
+/* table css */
+/* nth-child, odd, even */
+table.mainTable {
+	width: 60%;
+	margin: auto;
+}
+table.mainTable td, table.mainTable th{
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+table.mainTable tr:nth-child(event){
+	background-color: #f2f2f2;
+}
+
+table.mainTable tr:hover{
+	background-color: #ddd;
+}
+
+table.mainTable th{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #04AA6D;
+	color: white;
 }
