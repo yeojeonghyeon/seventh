@@ -13,9 +13,10 @@ table.mainTable {
 table.mainTable td, table.mainTable th{
 	border: 1px solid #ddd;
 	padding: 8px;
+	text-align: left;
 }
 
-table.mainTable tr:nth-child(event){
+table.mainTable tr:nth-child(even){
 	background-color: #f2f2f2;
 }
 
