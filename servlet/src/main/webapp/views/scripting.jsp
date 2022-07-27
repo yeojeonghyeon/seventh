@@ -47,6 +47,11 @@
 			</tbody>
 		</table>
 	</div>
+	<div>
+		<input type=text value="<%=request.getParameter("showType")%>">
+		<input type=text value="<%=request.getParameter("firstOperand")%>">
+		<input type=text value="<%=request.getParameter("secondOperand")%>">
+	</div>
 </body>
 </html>
 <%!

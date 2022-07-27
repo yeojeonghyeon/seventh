@@ -33,6 +33,19 @@
 					<button type="submit">더하기!!</button>
 				</form>
 			</article>
+			<article>
+				<h4>jsp 호출</h4>
+				<form action="views/scripting.jsp" method="GET">
+					<!--  서버로 보낼 때 속성은 name 속성 값으로 구별 -->
+					<select name="showType">
+						<option value="stream">stream</option>
+						<option value="jsp">jsp</option>
+					</select>
+					<input type="number" name="firstOperand" required>
+					<input type="number" name="secondOperand" required>
+					<button type="submit">jsp로 데이터 보내기!!</button>
+				</form>
+			</article>
 		</section>
 	</main>
 </body>
