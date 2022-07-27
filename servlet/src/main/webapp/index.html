@@ -46,6 +46,17 @@
 					<button type="submit">jsp로 데이터 보내기!!</button>
 				</form>
 			</article>
+			<article>
+				<h4>forward</h4>
+				<form action="views/forwardDemo.jsp" method="GET">
+					<!--  서버로 보낼 때 속성은 name 속성 값으로 구별 -->
+					<select name="whatPage">
+						<option value="forwardedA.jsp">forwardedA.jsp</option>
+						<option value="forwardedB.jsp">forwardedB.jsp</option>
+					</select>
+					<button type="submit">forward!!</button>
+				</form>
+			</article>
 		</section>
 	</main>
 </body>
