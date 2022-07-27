@@ -52,6 +52,11 @@
 		<input type=text value="<%=request.getParameter("firstOperand")%>">
 		<input type=text value="<%=request.getParameter("secondOperand")%>">
 	</div>
+	<div>
+		<input type=text value="<%=application.getContextPath()%>">
+		<input type=text value="<%=request.getContextPath()%>">
+		<input type=text value="${pageContext.request.contextPath}">
+	</div>
 </body>
 </html>
 <%!
