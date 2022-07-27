@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.Enumeration" %>    
 <%
 	session.setAttribute("bloodType", request.getParameter("bloodType"));
 %>    
@@ -13,7 +14,8 @@
 	<article>
 		<h4>final step</h4>
 	  <%Enumeration<String> names = session.getAttributeNames();
-		for(String name : names){
+		while(names.hasMoreElements()){
+			String name = names.nextElement();
 			String value = (String)session.getAttribute(name);%>
 			<p><%=name%> : <%=value%></p>
 	  <%}%>

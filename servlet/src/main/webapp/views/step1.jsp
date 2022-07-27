@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	HttpSession session = request.getSession();
-	session.setAttribute("gender", request.getParameter("gender"));
+	HttpSession sess = request.getSession();
+	sess.setAttribute("gender", request.getParameter("gender"));
 %>    
 <!DOCTYPE html>
 <html>
