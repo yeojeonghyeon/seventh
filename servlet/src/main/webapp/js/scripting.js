@@ -1,7 +1,3 @@
-/**
- * 
- */
- 
 document.querySelector("table.mainTable").addEventListener("click", function(){
 	//alert(event.target.innerText);
 	var tr = event.target.parentElement;
