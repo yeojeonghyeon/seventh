@@ -1,12 +1,25 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 
-<beans xmlns = "http://www.springframework.org/schema/beans"
-   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation = "http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-   <bean id = "helloWorld" class = "com.scci.swag.HelloWorld">
-      <property name = "message" value = "Hello World!"/>
-   </bean>
+	<!-- <context:annotation-config /> -->
+	<context:component-scan base-package="com.scci.swag" />
+
+	<bean id="helloWorld" class="com.scci.swag.HelloWorld">
+		<property name="message" value="Hello World!" />
+	</bean>
+
+	<bean id="single" class="com.scci.swag.bean.Single" scope="singleton">
+		<property name="proto" ref="proto" />
+	</bean>
+	<bean id="proto" class="com.scci.swag.bean.Proto" scope="prototype">
+		<constructor-arg value="proto" />
+	</bean>
+	<bean id="postProcessor" class="com.scci.swag.bean.UserBeanPostProcessor" />
 
 </beans>
