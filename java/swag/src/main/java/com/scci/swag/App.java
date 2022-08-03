@@ -13,7 +13,7 @@ import com.scci.swag.bean.Single;
  */
 public class App {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("resource/beans.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
 		Foo foo = (Foo) context.getBean("foo");
 		Proto pro1 = (Proto) context.getBean("proto");

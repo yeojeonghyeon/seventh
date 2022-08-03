@@ -8,18 +8,29 @@
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- <context:annotation-config /> -->
-	<context:component-scan base-package="com.scci.swag" />
+	<context:component-scan
+		base-package="com.scci.swag" />
 
 	<bean id="helloWorld" class="com.scci.swag.HelloWorld">
 		<property name="message" value="Hello World!" />
 	</bean>
 
-	<bean id="single" class="com.scci.swag.bean.Single" scope="singleton">
+	<bean id="single" class="com.scci.swag.bean.Single"
+		scope="singleton">
 		<property name="proto" ref="proto" />
 	</bean>
-	<bean id="proto" class="com.scci.swag.bean.Proto" scope="prototype">
+	<bean id="proto" class="com.scci.swag.bean.Proto"
+		scope="prototype">
 		<constructor-arg value="proto" />
 	</bean>
-	<bean id="postProcessor" class="com.scci.swag.bean.UserBeanPostProcessor" />
+	<bean id="postProcessor"
+		class="com.scci.swag.bean.UserBeanPostProcessor" />
+
+	<bean id="rectDrawing"
+		class="com.scci.swag.pattern.bridge.RectDrawing" />
+	<bean id="rectangle"
+		class="com.scci.swag.pattern.bridge.Rectangle">
+		<constructor-arg ref="rectDrawing" />
+	</bean>
 
 </beans>

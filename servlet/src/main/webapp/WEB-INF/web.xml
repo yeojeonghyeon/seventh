@@ -38,6 +38,24 @@
 		<servlet-name>LegacyServlet</servlet-name>
 		<url-pattern>/LegacyServlet</url-pattern>
 	</servlet-mapping>
+	<!-- 에러처리를 위한 서블릿 -->
+	<servlet>
+		<servlet-name>ErrorServlet</servlet-name>
+		<servlet-class>com.scci.servlet.ErrorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ErrorServlet</servlet-name>
+		<url-pattern>/error</url-pattern>
+	</servlet-mapping>
+	<!-- 상태 코드에 따른 에러 페이지 등록 -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error</location>
+	</error-page>
 </web-app>
 
 
