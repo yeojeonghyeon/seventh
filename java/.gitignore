@@ -1,6 +1,6 @@
 /.metadata/
 /Servers/
-**/settings
+**/.settings
 **/.metadata
 **/target
 **/classes
