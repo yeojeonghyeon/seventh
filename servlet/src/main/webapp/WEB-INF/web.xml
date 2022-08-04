@@ -41,8 +41,10 @@
 	<servlet>
 		<servlet-name>InitParamServlet</servlet-name>
 		<servlet-class>com.scci.servlet.InitParamServlet</servlet-class>
-		<init-param>encoding</init-param>
-		<init-value>utf-8</init-value>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>InitParamServlet</servlet-name>
