@@ -80,10 +80,12 @@
 			</article>
 			<article>
 				<h4>file upload</h4>
-					<form method="post" action="upload" enctype="multipart/form-data">
-        			Choose a file: <input type="file" name="multiPartServlet" multiple/>
-        				<input type="submit" value="Upload"/>
-					</form>
+				<form method="post" action="upload" enctype="multipart/form-data">
+       			Choose a file: <input type="file" id="uploadFiles" name="multiPartServlet" multiple/>
+       				<select id="uploadFileList" size="5">
+       				</select>
+       				<input type="submit" value="Upload"/>
+				</form>
 			</article>
 			<article>
 				<h4>init parameter</h4>
@@ -94,4 +96,5 @@
 		</section>
 	</main>
 </body>
+
 </html>
