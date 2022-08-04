@@ -11,8 +11,9 @@
 </head>
 <body>
 <%!
+// 이런 형식으로는 사용하는 빈도가 거의 제로에 가까움.
 public static final class Person{
-	public String name;
+	private String name;
 	public Person(String name){
 		this.name = name;
 	}
@@ -51,6 +52,7 @@ public static final class Person{
 			<li>${fileName}</li>
 		</c:forEach>
 	</ul>
+	<!--  pojo 클래스의 맴버에 접근 할 때는 getter를 이용, getter 없으면 접근 불가능  -->
 	<p>${requestScope.person.name}</p>
 </body>
 </html>
