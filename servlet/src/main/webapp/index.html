@@ -81,7 +81,7 @@
 			<article>
 				<h4>file upload</h4>
 				<form method="post" action="upload" enctype="multipart/form-data">
-       			Choose a file: <input type="file" id="uploadFiles" name="multiPartServlet" multiple/>
+       			Choose a file: <input type="file" id="uploadFiles" name="multiPartServlet" multiple required>
        				<select id="uploadFileList" size="5">
        				</select>
        				<input type="submit" value="Upload"/>
@@ -96,5 +96,19 @@
 		</section>
 	</main>
 </body>
-
+<script>
+(function(){
+	let uploadFiles = document.querySelector("#uploadFiles");
+	let uploadFileList = document.querySelector("#uploadFileList");
+	uploadFiles.addEventListener("change", function(){
+		// this는 <input type="file" id="uploadFiles"> DOM
+		let files = this.files;
+		let html = '';
+		for(let file of files){
+			html += `<option>${file.name}</option>`;
+		}
+		uploadFileList.innerHTML = html;
+	});
+})();
+</script>
 </html>
