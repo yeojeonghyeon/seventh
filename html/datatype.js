@@ -102,3 +102,54 @@ console.log(counter1.increment());
 
 counter2.increment();
 console.log(counter2.increment());
+
+// 함수 객체의 prototype 프로퍼티
+// __proto__
+// Person.prototype = {constructor: Person, __proto__: Function.prototype}
+function Person(name, birth, address){
+    this.name = name;
+    this.birth = birth;
+    this.address = address;
+    this.getInfo = function(){
+        return `${this.name} ${this.birth} ${this.address}`;
+    };
+}
+// Person.prototype = {constructor: Person, __proto__: Function.prototype, version = 1.0, getVersion: function(){}}
+Person.prototype.version = "1.0";
+Person.prototype.getVersion = function(){
+    return this.version;
+};
+
+// 빈 객체를 하나 만들고 {__proto__: Person.prototype} this로 바인딩
+var kim = new Person("김사랑", "1976-03-23", "서울특별시 강남구");
+// 객체(o).함수() 형태로 호출되면 호출되는 함수의 this는 객체(o)
+console.log(kim.getInfo()); //
+// kim 객체에는 자신 소유의 getVersion이 없음. 그래서 프로토타입 체인을 따라서 올라감(__proto__: Person.prototype)
+// Person.prototype에 getVersion이 존재. getVersion이 함수여서 실행 함.
+// 그리고 봤더니 함수 내부에 this가 보이죠. this <= kim : kim.getVersion(), kim 객체에는 자신 소유의 version 프로퍼티가 없음
+// 그래서 프로토타입 체인을 따라서 올라감(__proto__: Person.prototype)  
+console.log(kim.getVersion()); // 1.0
+
+Person.prototype.version = "1.1";
+var kang = new Person("강민수", "1971-03-23", "서울특별시 강남구");
+console.log(kang.getVersion());
+
+// Child.prototype = {__proto__: Person.prototype, name: undefined, birth: undefined
+//                , address: undefined
+//                , getInfo: function
+//                , constructor: Child}
+Child.prototype = new Person();
+Child.prototype.constructor = Child;
+function Child(name, birth, address){
+    // this.name = name;
+    // this.birth = birth;
+    // this.address = address;
+    // 생성자 빌려쓰기
+    // 객체.함수, this  = 객체
+    // call, apply, bind 함수를 이용하면 함수의 this를 설정 할 수 있다.
+    Person.call(this, name, birth, address);
+};
+// {__proto__: Child.prototype}
+var child = new Child("자식", "1988", "순천시 장천동");
+console.log(child.getInfo());
+console.log(child.getVersion());
