@@ -134,12 +134,13 @@
 			</article>
 			<article>
 				<h4>JstlServlet 호출</h4>
-				<form action="JstlServlet" method="get">
+				<form action="JstlServlet" method="post">
 					<select name="searchType">
 						<option value="employees">직원정보</option>
 						<option value="departments">부서정보</option>
 						<option value="all">모두</option>
 					</select>
+					<input type="text" name="tokens" value="사과|배|감|딸기|복숭아" >
 					<button type="submit">jstl.jsp gogo!!</button>
 				</form>
 			</article>

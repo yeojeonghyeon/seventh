@@ -20,6 +20,7 @@ public class JstlServlet extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String searchType = request.getParameter("searchType");
+		String tokens = request.getParameter("tokens");
 		List<Employee> empList = null;
 		List<Department> deptList = null;
 		// searchType 'all'일 경우 empList, deptList를 모두 채워라
@@ -34,6 +35,7 @@ public class JstlServlet extends HttpServlet {
 			empList = JstlServlet.getEmployees();
 			deptList = JstlServlet.getDepartments();
 		}
+		request.setAttribute("tokens", tokens);
 		request.setAttribute("employees", empList);
 		request.setAttribute("departments", deptList);
 		RequestDispatcher rd = request.getRequestDispatcher("views/jstl.jsp");

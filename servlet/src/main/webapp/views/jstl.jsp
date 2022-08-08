@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="title" value="jstl action tag" scope="page" />
 <!DOCTYPE html>
@@ -10,7 +10,9 @@
 </head>
 <body>
 	<header>
-		<h3><c:out value="${title}" /></h3>
+		<h3>
+			<c:out value="${title}" />
+		</h3>
 	</header>
 	<main>
 		<section>
@@ -18,7 +20,8 @@
 				<c:if test="${not empty employees}">
 					<ul>
 						<c:forEach var="employee" items="${employees}">
-							<li>${employee.empNm} ${employee.empNo} ${employee.deptNo} ${employee.startDate}</li>
+							<li>${employee.empNm}${employee.empNo} ${employee.deptNo}
+								${employee.startDate}</li>
 						</c:forEach>
 					</ul>
 				</c:if>
@@ -27,10 +30,18 @@
 				<c:if test="${not empty departments}">
 					<ul>
 						<c:forEach var="department" items="${departments}">
-							<li>${department.deptNo} ${department.deptNm}</li>
+							<li>${department.deptNo}${department.deptNm}</li>
 						</c:forEach>
 					</ul>
 				</c:if>
+			</article>
+			<article>
+				<h4>forTokens</h4>
+				<ul>
+					<c:forTokens var="token" items="${tokens}" delims="|" >
+						<li><c:out value="${token}" /></li>
+					</c:forTokens>
+				</ul>
 			</article>
 		</section>
 	</main>
