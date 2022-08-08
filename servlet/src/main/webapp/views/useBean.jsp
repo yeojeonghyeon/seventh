@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:useBean id="student" class="com.scci.servlet.Student" scope="request"/>
+
+<jsp:useBean id="fromParameter" class="com.scci.servlet.Student" scope="request" />
+<jsp:setProperty name="fromParameter" property="*" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +29,11 @@
 			${student.name}
 			${student.addr}
 			${student.birth}
+		</article>
+		<article>
+			<jsp:getProperty name="fromParameter" property="name" />
+			<jsp:getProperty name="fromParameter" property="addr" />
+			<jsp:getProperty name="fromParameter" property="birth" />
 		</article>
 	</div>
 </body>
