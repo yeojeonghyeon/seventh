@@ -8,6 +8,8 @@
 </head>
 <body>
 <!--  jsp 표준 action tag include사용 -->
-<jsp:include page="sub.jsp"></jsp:include>
+<jsp:include page="sub.jsp">
+	<jsp:param name="tableType" value="actor" />
+</jsp:include>
 </body>
 </html>
