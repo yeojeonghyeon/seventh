@@ -126,15 +126,19 @@
 			<article>
 				<h4>UseBeanServlet 호출</h4>
 				<form action="UseBeanServlet" method="POST">
-					<input type="text" name="name" value="파라미터" >
-					<input type="text" name="addr" value="순천시 장천동 상공회의소" >
-					<input type="text" name="birth" value="2022" >
+					<input type="text" name="name" value="파라미터"> <input
+						type="text" name="addr" value="순천시 장천동 상공회의소"> <input
+						type="text" name="birth" value="2022">
 					<button type="submit">UseBeanServlet!!</button>
 				</form>
 			</article>
 			<article>
-				<h4>views/jstl.jsp 호출</h4>
-				<form action="views/jstl.jsp" method="POST">
+				<h4>JstlServlet 호출</h4>
+				<form action="JstlServlet" method="get">
+					<select name="searchType">
+						<option value="employees">직원정보</option>
+						<option value="departments">부서정보</option>
+					</select>
 					<button type="submit">jstl.jsp gogo!!</button>
 				</form>
 			</article>
