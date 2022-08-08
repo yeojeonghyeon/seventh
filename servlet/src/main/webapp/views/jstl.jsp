@@ -12,5 +12,27 @@
 	<header>
 		<h3><c:out value="${title}" /></h3>
 	</header>
+	<main>
+		<section>
+			<article>
+				<c:if test="${not empty employees}">
+					<ul>
+						<c:forEach var="employee" items="${employees}">
+							<li>${employee.empNm} ${employee.empNo} ${employee.deptNo} ${employee.startDate}</li>
+						</c:forEach>
+					</ul>
+				</c:if>
+			</article>
+			<article>
+				<c:if test="${not empty departments}">
+					<ul>
+						<c:forEach var="department" items="${departments}">
+							<li>${department.deptNo} ${department.deptNm}</li>
+						</c:forEach>
+					</ul>
+				</c:if>
+			</article>
+		</section>
+	</main>
 </body>
 </html>
