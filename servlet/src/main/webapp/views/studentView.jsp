@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.scci.servlet.Student" %>
+<jsp:useBean id="helloBean" class="com.scci.bean.HelloBean" scope="request"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,7 @@
 <title>학생 정보를 보여주는 페이지!</title>
 </head>
 <body>
+	<jsp:getProperty name="helloBean" property="name" />
 	<div>
 		<table>
 			<thead>

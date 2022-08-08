@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.scci.bean.HelloBean;
+
 /**
  * Servlet implementation class FirstServlet
  */
@@ -28,7 +30,9 @@ public class FirstServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("views/studentView.jsp");
+		HelloBean hb = new HelloBean("name", "1234");
+		request.setAttribute("helloBean", hb);
+		RequestDispatcher rd = request.getRequestDispatcher("views/firstServlet.jsp");
 		rd.forward(request, response);
 	}
 

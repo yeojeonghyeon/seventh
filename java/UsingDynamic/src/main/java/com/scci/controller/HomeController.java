@@ -42,7 +42,7 @@ public class HomeController {
 	
 	@RequestMapping(value="/actors")
 	public String actors(@RequestParam Map<String, String> param, Model model) {
-		List<Map<String, String>> results = testService.selectActors(null);
+		List<Map<String, String>> results = testService.selectActors(param);
 		model.addAttribute("results", results);
 		return "actors";
 	}

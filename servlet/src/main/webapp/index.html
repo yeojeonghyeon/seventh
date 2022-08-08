@@ -33,6 +33,12 @@
 				</form>
 			</article>
 			<article>
+				<h4>FirstServlet 호출</h4>
+				<form action="FirstServlet" method="GET">
+					<button type="submit">FirstServlet!!</button>
+				</form>
+			</article>
+			<article>
 				<h4>jsp 호출</h4>
 				<form action="views/scripting.jsp" method="GET">
 					<!--  서버로 보낼 때 속성은 name 속성 값으로 구별 -->
@@ -81,16 +87,36 @@
 			<article>
 				<h4>file upload</h4>
 				<form method="post" action="upload" enctype="multipart/form-data">
-       			Choose a file: <input type="file" id="uploadFiles" name="multiPartServlet" multiple required>
-       				<select id="uploadFileList" size="5">
-       				</select>
-       				<input type="submit" value="Upload"/>
+					Choose a file: <input type="file" id="uploadFiles"
+						name="multiPartServlet" multiple required> <select
+						id="uploadFileList" size="5">
+					</select> <input type="submit" value="Upload" />
 				</form>
 			</article>
 			<article>
 				<h4>init parameter</h4>
 				<form action="InitParamServlet" method="post">
 					<button type="submit">go!!!!</button>
+				</form>
+			</article>
+			<article>
+				<h4>views/bean.jsp</h4>
+				<form action="views/bean.jsp" method="GET">
+					<button type="submit">action tag useBean!!</button>
+				</form>
+			</article>
+			<article>
+				<h4>views/bean.jsp</h4>
+				<form action="views/bean.jsp" method="GET">
+					<input type=text name="name" value="smith"> <input
+						type=text name="birth" value="1996">
+					<button type="submit">setProperty property="*"!!</button>
+				</form>
+			</article>
+			<article>
+				<h4>views/action.jsp</h4>
+				<form action="views/action.jsp" method="GET">
+					<button type="submit">jsp include action tag</button>
 				</form>
 			</article>
 		</section>
