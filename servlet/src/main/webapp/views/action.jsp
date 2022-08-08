@@ -11,5 +11,8 @@
 <jsp:include page="sub.jsp">
 	<jsp:param name="tableType" value="${param.tableType}" />
 </jsp:include>
+<jsp:include page="subChoose.jsp">
+	<jsp:param name="tableType" value="${param.tableType}" />
+</jsp:include>
 </body>
 </html>
