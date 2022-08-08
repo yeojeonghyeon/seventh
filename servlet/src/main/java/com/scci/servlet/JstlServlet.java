@@ -22,6 +22,7 @@ public class JstlServlet extends HttpServlet {
 		String searchType = request.getParameter("searchType");
 		List<Employee> empList = null;
 		List<Department> deptList = null;
+		// searchType 'all'일 경우 empList, deptList를 모두 채워라
 		switch(searchType) {
 		case "employees":
 			empList = JstlServlet.getEmployees();
@@ -29,6 +30,9 @@ public class JstlServlet extends HttpServlet {
 		case "departments":
 			deptList = JstlServlet.getDepartments();
 			break;
+		case "all":
+			empList = JstlServlet.getEmployees();
+			deptList = JstlServlet.getDepartments();
 		}
 		request.setAttribute("employees", empList);
 		request.setAttribute("departments", deptList);
