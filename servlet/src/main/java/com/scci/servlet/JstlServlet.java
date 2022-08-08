@@ -1,5 +1,6 @@
 package com.scci.servlet;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +21,22 @@ public class JstlServlet extends HttpServlet {
 		List<Department> deptList = null;
 		switch(searchType) {
 		case "employees":
-		case "department":
+			empList = JstlServlet.getEmployees();
+			break;
+		case "departments":
+			deptList = JstlServlet.getDepartments();
+			break;
 		}
+		request.setAttribute("employees", empList);
+		request.setAttribute("departments", deptList);
+	}
+	
+	private static List<Employee> getEmployees(){
+		List<Employee> list = new ArrayList<Employee>();
+		return list;
+	}
+	private static List<Department> getDepartments(){
+		List<Department> list = new ArrayList<Department>();
+		return list;
 	}
 }
