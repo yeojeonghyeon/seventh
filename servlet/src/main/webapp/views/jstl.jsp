@@ -17,6 +17,8 @@ student.setBirth(2005);
 <head>
 <meta charset="UTF-8">
 <title>jstl action tag library</title>
+<!-- defer 자바스크립 실행을 지연, html문서가 모두 로딩 될 때 까지.  -->
+<script src="${pageContext.request.contextPath}/js/jstl.js" defer></script>
 </head>
 <body>
 	<header>
@@ -69,6 +71,14 @@ student.setBirth(2005);
 					</c:when>
 				</c:choose>
 			</article>			
+		</section>
+		<!-- GsonServlet 호출한 후에 callback에서 ul 태그의 컨텐츠를 생성 -->
+		<section>
+			<article>
+				<h3>ajax contents</h3>
+				<ul id="fruitList"></ul>
+				<button id="fruitBtn">ajax fruit list</button>
+			</article>
 		</section>
 	</main>
 </body>
