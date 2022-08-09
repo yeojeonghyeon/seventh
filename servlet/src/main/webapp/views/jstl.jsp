@@ -9,9 +9,9 @@ student.setName("smith");
 student.setAddr("new york");
 student.setBirth(2005);
 -->
-<c:set target="student" property="name" value="smith" scope="request" />
-<c:set target="student" property="addr" value="new york" scope="request" />
-<c:set target="student" property="birth" value="2005" scope="request" />
+<c:set target="${student}" property="name" value="smith" />
+<c:set target="${student}" property="addr" value="new york" />
+<c:set target="${student}" property="birth" value="2005" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,6 +53,9 @@ student.setBirth(2005);
 					</c:forTokens>
 				</ul>
 			</article>
+			<article>
+				<p>${requestScope.student.name} ${requestScope.student.addr} ${requestScope.student.birth}</p>
+			</article>			
 		</section>
 	</main>
 </body>
