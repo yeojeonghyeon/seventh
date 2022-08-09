@@ -57,7 +57,17 @@ student.setBirth(2005);
 				<p>${requestScope.student.name} ${requestScope.student.addr} ${requestScope.student.birth}</p>
 			</article>			
 			<article>
-				<p>${requestScope.student.name} ${requestScope.student.addr} ${requestScope.student.birth}</p>
+				<c:choose>
+					<c:when test="${param.searchType eq 'signer'}">
+						<p>가수목록</p>
+					</c:when>
+					<c:when test="${param.searchType eq 'actor'}">
+						<p>배우목록</p>
+					</c:when>
+					<c:when test="${param.searchType eq 'all'}">
+						<p>모두</p>
+					</c:when>
+				</c:choose>
 			</article>			
 		</section>
 	</main>
