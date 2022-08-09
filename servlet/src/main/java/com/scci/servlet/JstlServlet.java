@@ -21,6 +21,9 @@ public class JstlServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String searchType = request.getParameter("searchType");
 		String tokens = request.getParameter("tokens");
+		// 기본 생성자로 인스턴스 생성
+		Student student = new Student();
+		request.setAttribute("student", student);
 		List<Employee> empList = null;
 		List<Department> deptList = null;
 		// searchType 'all'일 경우 empList, deptList를 모두 채워라
