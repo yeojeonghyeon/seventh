@@ -58,11 +58,11 @@ student.setBirth(2005);
 			</article>			
 			<article>
 				<c:choose>
-					<c:when test="${param.searchType eq 'signer'}">
-						<p>가수목록</p>
+					<c:when test="${param.searchType eq 'employees'}">
+						<p>직원목록</p>
 					</c:when>
-					<c:when test="${param.searchType eq 'actor'}">
-						<p>배우목록</p>
+					<c:when test="${param.searchType eq 'departments'}">
+						<p>부서목록</p>
 					</c:when>
 					<c:when test="${param.searchType eq 'all'}">
 						<p>모두</p>
