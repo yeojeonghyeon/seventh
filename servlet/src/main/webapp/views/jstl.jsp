@@ -56,6 +56,9 @@ student.setBirth(2005);
 			<article>
 				<p>${requestScope.student.name} ${requestScope.student.addr} ${requestScope.student.birth}</p>
 			</article>			
+			<article>
+				<p>${requestScope.student.name} ${requestScope.student.addr} ${requestScope.student.birth}</p>
+			</article>			
 		</section>
 	</main>
 </body>
