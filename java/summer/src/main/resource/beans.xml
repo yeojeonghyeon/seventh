@@ -8,5 +8,12 @@
 	<!-- HelloWolrd클래스를 사용해서 인스턴스를 만들고, 스프링컨테이너에서 식별자는 helloWorld -->
 	<bean id="helloWorld" class="com.scci.summer.HelloWorld">
 		<property name="message" value="Hello World!" />
-	</bean>   
+	</bean>
+	<!-- bean 생성 id="computer" -->
+	<!-- manufacture : 삼성 -->	   
+	<!-- serialNo : 478520810 -->
+	<bean id="computer" class="com.scci.beans.Computer">
+		<property name="manufacture" value="삼성" />
+		<property name="serialNo" value="4855882334" />
+	</bean>	   
 </beans>
