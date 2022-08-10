@@ -20,6 +20,7 @@ Date now = new Date();
 %>
 <c:set var="now" value="<%=new Date()%>" scope="page" />
 <c:set var="str" value="java javascript android" scope="page" />
+<c:set var="subjects" value="${fn:split(str, ' ')}" scope="page" />
 <p><fmt:formatDate type="time" value="${pageScope.now}"/></p>
 <p><fmt:formatDate type="time" value="<%=now%>"/></p>
 <p><fmt:formatDate type="date" value="${pageScope.now}"/></p>
@@ -34,6 +35,15 @@ Date now = new Date();
 </c:if>
 <c:if test="${fn:contains(str, 'database')}">
 	<p>database is exists</p>
+</c:if>
+<hr>
+<!-- forEach를 이용하여 subjects 배열의 요소를 li 요소로 나열하라!! -->
+<c:if test="${not empty subjects}" >
+	<ul>
+	<c:forEach var="subject" items="${subjects}">
+		<li>${subject}</li>
+	</c:forEach>
+	</ul>
 </c:if>
 </body>
 </html>
