@@ -33,7 +33,8 @@ public class App {
 		for(String book : books.getMyList()) {
 			System.out.println(book);
 		}
-		// Cosumer<? extends String>
+		// Consumer<? extends String>
+		// Consumer<String>
 		books.getMyList().stream().forEach(System.out::println);
 		Map<String, String> myMap = books.getMyMap();
 		myMap.forEach((k, v)->{
