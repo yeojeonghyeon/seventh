@@ -10,13 +10,13 @@
 		<property name="message" value="Hello World!" />
 	</bean>
 	<!-- bean 생성 id="computer" -->
-	<!-- manufacture : 삼성 -->	   
+	<!-- manufacture : 삼성 -->
 	<!-- serialNo : 478520810 -->
 	<bean id="computer" class="com.scci.beans.Computer">
 		<property name="manufacture" value="삼성" />
 		<property name="serialNo" value="4855882334" />
 	</bean>
-	<bean id="spellChecker"	class="com.scci.beans.SpellChecker">
+	<bean id="spellChecker" class="com.scci.beans.SpellChecker">
 		<constructor-arg>
 			<value>kor</value>
 		</constructor-arg>
@@ -51,5 +51,13 @@
 				<entry key="producer" value="스티븐" />
 			</map>
 		</property>
-	</bean>   
+	</bean>
+	<bean id="singleCom" class="com.scci.beans.Computer" scope="singleton">
+		<property name="manufacture" value="싱글 컴퓨터" />
+		<property name="serialNo" value="585858229" />
+	</bean>
+	<bean id="protoCom" class="com.scci.beans.Computer" scope="prototype">
+		<property name="manufacture" value="프로토 컴퓨터" />
+		<property name="serialNo" value="123456789" />
+	</bean>
 </beans>

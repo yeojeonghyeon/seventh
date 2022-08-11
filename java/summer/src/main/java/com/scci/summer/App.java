@@ -42,6 +42,20 @@ public class App {
 		});
 		
 		myMap.forEach(App::print);
+		
+		Computer single1 = (Computer)context.getBean("singleCom");
+		Computer single2 = (Computer)context.getBean("singleCom");
+		
+		if ( single1 == single2 ) {
+			System.out.println("singleton same");
+		}
+		
+		single1 = (Computer)context.getBean("protoCom");
+		single2 = (Computer)context.getBean("protoCom");
+		
+		if ( single1 == single2 ) {
+			System.out.println("prototype same");
+		}
 	}
 	public static void print(String k, String v) {
 		System.out.println(k+" "+v);
