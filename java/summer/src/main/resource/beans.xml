@@ -44,5 +44,12 @@
 				<value>위인전기</value>
 			</list>
 		</property>
+		<property name="myMap">
+			<map>
+				<entry key="title" value="범죄도시" />
+				<entry key="price" value="11800" />
+				<entry key="producer" value="스티븐" />
+			</map>
+		</property>
 	</bean>   
 </beans>

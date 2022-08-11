@@ -5,12 +5,13 @@ import java.util.Map;
 
 public class Books {
 	private List<String> myList;
-	private Map<String, String> map;
-	public Map<String, String> getMap() {
-		return map;
+	private Map<String, String> myMap;
+
+	public Map<String, String> getMyMap() {
+		return myMap;
 	}
-	public void setMap(Map<String, String> map) {
-		this.map = map;
+	public void setMyMap(Map<String, String> myMap) {
+		this.myMap = myMap;
 	}
 	public List<String> getMyList() {
 		return myList;

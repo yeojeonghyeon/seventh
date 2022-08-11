@@ -1,5 +1,7 @@
 package com.scci.summer;
 
+import java.util.Map;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -33,5 +35,14 @@ public class App {
 		}
 		// Cosumer<? extends String>
 		books.getMyList().stream().forEach(System.out::println);
+		Map<String, String> myMap = books.getMyMap();
+		myMap.forEach((k, v)->{
+			System.out.println(k+" "+v);
+		});
+		
+		myMap.forEach(App::print);
+	}
+	public static void print(String k, String v) {
+		System.out.println(k+" "+v);
 	}
 }
