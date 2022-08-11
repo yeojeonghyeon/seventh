@@ -28,5 +28,10 @@
 		<constructor-arg>
 			<value>1.1</value>
 		</constructor-arg>
+	</bean>
+	<bean id="person" class="com.scci.beans.Person">
+		<constructor-arg>
+			<value type="int">30</value>
+		</constructor-arg>
 	</bean>   
 </beans>

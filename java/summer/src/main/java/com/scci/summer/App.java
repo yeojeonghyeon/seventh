@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.scci.beans.Computer;
+import com.scci.beans.Person;
 import com.scci.beans.TextEditor;
 
 // ctrl + d : 선택 영역 지우기; 라인 단위
@@ -22,5 +23,7 @@ public class App {
 
 		TextEditor editor = (TextEditor)context.getBean("textEditor");
 		System.out.println(editor.getSpellChecker().getLanguage());
+		Person person = (Person)context.getBean("person");
+		System.out.println(person.getAge());
 	}
 }
