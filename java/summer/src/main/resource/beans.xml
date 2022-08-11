@@ -15,5 +15,18 @@
 	<bean id="computer" class="com.scci.beans.Computer">
 		<property name="manufacture" value="삼성" />
 		<property name="serialNo" value="4855882334" />
-	</bean>	   
+	</bean>
+	<bean id="spellChecker"	class="com.scci.beans.SpellChecker">
+		<constructor-arg>
+			<value>kor</value>
+		</constructor-arg>
+	</bean>
+	<bean id="textEditor" class="com.scci.beans.TextEditor">
+		<constructor-arg>
+			<ref bean="spellChecker" />
+		</constructor-arg>
+		<constructor-arg>
+			<value>1.1</value>
+		</constructor-arg>
+	</bean>   
 </beans>
