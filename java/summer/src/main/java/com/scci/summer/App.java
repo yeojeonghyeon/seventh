@@ -3,6 +3,7 @@ package com.scci.summer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.scci.beans.Books;
 import com.scci.beans.Computer;
 import com.scci.beans.Person;
 import com.scci.beans.TextEditor;
@@ -25,5 +26,12 @@ public class App {
 		System.out.println(editor.getSpellChecker().getLanguage());
 		Person person = (Person)context.getBean("person");
 		System.out.println(person.getAge());
+		
+		Books books = (Books)context.getBean("books");
+		for(String book : books.getMyList()) {
+			System.out.println(book);
+		}
+		// Cosumer<? extends String>
+		books.getMyList().stream().forEach(System.out::println);
 	}
 }

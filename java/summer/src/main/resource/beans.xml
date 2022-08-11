@@ -33,5 +33,16 @@
 		<constructor-arg>
 			<value type="int">30</value>
 		</constructor-arg>
+	</bean>
+	<bean id="books" class="com.scci.beans.Books">
+		<property name="myList">
+			<list>
+				<value>무궁화꽃이 피었습니다</value>
+				<value>태백산맥</value>
+				<value>메밀꽃 필 무렵</value>
+				<value>정의란 무엇인가</value>
+				<value>위인전기</value>
+			</list>
+		</property>
 	</bean>   
 </beans>
