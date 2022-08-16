@@ -81,4 +81,7 @@
 	  -->
 	<context:component-scan base-package="com.scci.component" />
 	<!-- <bean id="logging" class="com.scci.aop.Logging" /> -->
+	
+	<bean id="loginDao" class="com.scci.component.LoginByLocalDaoImpl" />
+	<bean id="loginServiceImpl" class="com.scci.component.LoginServiceImpl" autowire="byName" />
 </beans>
