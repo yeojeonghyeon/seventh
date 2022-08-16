@@ -3,9 +3,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop = "http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 
 	<!-- <context:annotation-config /> -->
 	<context:component-scan
@@ -32,5 +34,13 @@
 		class="com.scci.swag.pattern.bridge.Rectangle">
 		<constructor-arg ref="rectDrawing" />
 	</bean>
+	
+	<bean id="beforeAdvice" class="com.scci.swag.aop.BeforeAdvice" />
+	<aop:config>
+		<aop:pointcut id="beanPointcut" expression="execution(* com.scci.swag..*.*(..))" />
+		<aop:aspect ref="beforeAdvice">
+			<aop:before method="beforeLog" pointcut-ref="beanPointcut" />
+		</aop:aspect>
+	</aop:config>
 
 </beans>
