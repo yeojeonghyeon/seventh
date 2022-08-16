@@ -86,6 +86,6 @@
 	<bean id="loginDao" class="com.scci.component.LoginByGoogleDaoImpl" />
 	<bean id="loginServiceImpl" class="com.scci.component.LoginServiceImpl" autowire="byName" />
 	
-	<bean id="boardDao" class="com.scci.component.BoardDaoImpl" />
+	<bean class="com.scci.component.BoardDaoImpl" />
 	<bean id="boardServiceImpl" class="com.scci.component.BoardServiceImpl" autowire="byType" />
 </beans>

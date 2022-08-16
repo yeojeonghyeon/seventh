@@ -20,5 +20,15 @@ public class Main {
 			System.out.println(post.getBody());
 			System.out.println("======================");
 		});
+		
+		MemberServiceImpl memberService = (MemberServiceImpl)context.getBean("memberServiceImpl");
+		List<Member> members = memberService.getMembers();
+		members.forEach((member)->{
+			System.out.println("======================");
+			System.out.println(member.getName());
+			System.out.println(member.getGrade());
+			System.out.println(member.getRegisterDt());
+			System.out.println("======================");
+		});
 	}
 }
