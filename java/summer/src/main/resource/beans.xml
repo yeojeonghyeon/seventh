@@ -62,4 +62,12 @@
 		<property name="manufacture" value="프로토 컴퓨터" />
 		<property name="serialNo" value="123456789" />
 	</bean>
+	
+	<bean id="commonLog" class="com.scci.aop.CommonLog" />
+	<aop:config>
+		<aop:aspect id="log" ref="commonLog">
+			<aop:pointcut id="selectBeans" expression="execution(* com.scci.beans.*.*(..))" />
+			<aop:before pointcut-ref="selectBeans" method="beforeLog" />
+		</aop:aspect>
+	</aop:config>
 </beans>
