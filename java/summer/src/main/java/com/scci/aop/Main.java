@@ -11,5 +11,7 @@ public class Main {
 		Computer computer = (Computer)context.getBean("computer");
 		computer.setManufacture("hp");
 		computer.getManufacture();
+		Fruit fruit = (Fruit)context.getBean("fruit");
+		fruit.exception();
 	}
 }

@@ -63,11 +63,17 @@
 		<property name="serialNo" value="123456789" />
 	</bean>
 	
+	<bean id="fruit" class="com.scci.aop.Fruit" />
 	<bean id="commonLog" class="com.scci.aop.CommonLog" />
 	<aop:config>
+		<aop:pointcut id="selectBeans" expression="execution(* com.scci.beans.*.*(..))" />
+		<aop:pointcut id="selectAops" expression="execution(* com.scci.aop.*.*(..))" />
 		<aop:aspect id="log" ref="commonLog">
-			<aop:pointcut id="selectBeans" expression="execution(* com.scci.beans.*.*(..))" />
 			<aop:before pointcut-ref="selectBeans" method="beforeLog" />
+			<aop:after-throwing pointcut-ref="selectAops" throwing = "ex" method="afterThrowing"/>
 		</aop:aspect>
 	</aop:config>
+	
+	<aop:aspectj-autoproxy/>
+	<bean id="logging" class="com.scci.aop.Logging" />
 </beans>

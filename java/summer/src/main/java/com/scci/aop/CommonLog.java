@@ -14,4 +14,9 @@ public class CommonLog {
 		}
 		System.out.println("=============================");
 	}
+	public void afterThrowing(IllegalArgumentException ex) {
+		System.out.println("=============================");
+		System.out.println("afterThrowing" + ex.getMessage());
+		System.out.println("=============================");
+	}
 }
