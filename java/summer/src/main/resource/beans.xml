@@ -73,7 +73,12 @@
 			<aop:after-throwing pointcut-ref="selectAops" throwing = "ex" method="afterThrowing"/>
 		</aop:aspect>
 	</aop:config>
-	
+	<!-- aspectj를 사용하기 위해 아래와 같이 설정, 자바 annotation 방식 -->
 	<aop:aspectj-autoproxy/>
-	<bean id="logging" class="com.scci.aop.Logging" />
+	<!-- 
+		빈으로 등록 될 준비를 마친 클래스들을 스캔하여, 빈으로 등록
+		@Controller, @Service, @Component, @Repository
+	  -->
+	<context:component-scan base-package="com.scci.component" />
+	<!-- <bean id="logging" class="com.scci.aop.Logging" /> -->
 </beans>
