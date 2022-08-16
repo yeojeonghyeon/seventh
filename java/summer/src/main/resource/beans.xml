@@ -82,6 +82,10 @@
 	<context:component-scan base-package="com.scci.component" />
 	<!-- <bean id="logging" class="com.scci.aop.Logging" /> -->
 	
-	<bean id="loginDao" class="com.scci.component.LoginByLocalDaoImpl" />
+	<!-- <bean id="loginDao1" class="com.scci.component.LoginByLocalDaoImpl" /> -->
+	<bean id="loginDao" class="com.scci.component.LoginByGoogleDaoImpl" />
 	<bean id="loginServiceImpl" class="com.scci.component.LoginServiceImpl" autowire="byName" />
+	
+	<bean id="boardDao" class="com.scci.component.BoardDaoImpl" />
+	<bean id="boardServiceImpl" class="com.scci.component.BoardServiceImpl" autowire="byType" />
 </beans>
