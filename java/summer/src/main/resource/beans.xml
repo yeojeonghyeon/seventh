@@ -88,4 +88,10 @@
 	
 	<bean class="com.scci.component.BoardDaoImpl" />
 	<bean id="boardServiceImpl" class="com.scci.component.BoardServiceImpl" autowire="byType" />
+	
+	<bean id="beanTemplate" abstract="true">
+		<property name="title" value="title From Template" />
+		<property name="body" value="body body from Template" />
+	</bean>
+	<bean id="post" class="com.scci.component.Post" parent="beanTemplate" />
 </beans>

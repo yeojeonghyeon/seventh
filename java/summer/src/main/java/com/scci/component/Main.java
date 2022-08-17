@@ -8,29 +8,33 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
+	private static Logger logger = LoggerFactory.getLogger(Main.class);
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		LoginServiceImpl loginService = (LoginServiceImpl)context.getBean("loginServiceImpl");
 		String userInfo = loginService.login("cocofarm");
-		System.out.println(userInfo);
 		
 		BoardServiceImpl boardService = (BoardServiceImpl)context.getBean("boardServiceImpl");
 		List<Post> list = boardService.getPosts();
 		list.forEach((post)->{
-			System.out.println("======================");
-			System.out.println(post.getTitle());
-			System.out.println(post.getBody());
-			System.out.println("======================");
+			logger.debug("======================");
+			logger.debug(post.getTitle());
+			logger.debug(post.getBody());
+			logger.debug("======================");
 		});
 		
 		MemberServiceImpl memberService = (MemberServiceImpl)context.getBean("memberServiceImpl");
 		List<Member> members = memberService.getMembers();
 		members.forEach((member)->{
-			System.out.println("======================");
-			System.out.println(member.getName());
-			System.out.println(member.getGrade());
-			System.out.println(member.getRegisterDt());
-			System.out.println("======================");
+			logger.debug("======================");
+			logger.debug(member.getName());
+			logger.debug(member.getGrade());
+			logger.debug(member.getRegisterDt());
+			logger.debug("======================");
 		});
+		
+		Post post = (Post)context.getBean("post");
+		logger.debug(post.getTitle());
+		logger.debug(post.getBody());
 	}
 }
