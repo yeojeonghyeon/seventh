@@ -12,6 +12,8 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
  
 	<mvc:annotation-driven />
+	<!-- static(정적)자원 url mapping  -->
+	<mvc:resources location="/static/" mapping="/static/**"></mvc:resources>
 	<context:component-scan
 		base-package="com.scci.controller, com.scci.service, com.scci.dao" />
 	<mvc:default-servlet-handler />

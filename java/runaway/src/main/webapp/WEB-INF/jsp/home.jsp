@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>home.jsp</title>
+<script src="${pageContext.request.contextPath}/static/js/common.js"></script>
 </head>
 <body>
 	<h3>${requestScope.title}</h3>
