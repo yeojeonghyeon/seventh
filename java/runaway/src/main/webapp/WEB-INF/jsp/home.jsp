@@ -8,7 +8,7 @@
 <!-- pageContext.request.contextPath => http://localhost:8080/runaway -->
 <script	src="${pageContext.request.contextPath}/static/jQuery/jquery-3.6.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/common.js"></script>
-<link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.css"></link>
+<link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.css" rel="stylesheet"></link>
 </head>
 <body>
 	<h3>${requestScope.title}</h3>
