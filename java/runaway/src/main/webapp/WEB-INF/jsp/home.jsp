@@ -11,7 +11,6 @@
 <link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.css" rel="stylesheet"></link>
 </head>
 <body>
-	<h3>${requestScope.title}</h3>
 	<header>
 		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -39,11 +38,27 @@
 
 		<!-- Jumbotron -->
 		<div class="p-5 text-center bg-light">
-			<h1 class="mb-3">Heading</h1>
-			<h4 class="mb-3">Subheading</h4>
+			<h1 class="mb-3">${requestScope.title}</h1>
+			<h4 class="mb-3">${requestScope.title}</h4>
 			<a class="btn btn-primary" href="" role="button">Call to action</a>
 		</div>
 		<!-- Jumbotron -->
 	</header>
+	<section class="container">
+		<article>
+			<h4 class="mb-3">bootstrap table</h4>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>이름</th>
+						<th>주소</th>
+						<th>전화번호</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</article>
+	</section>
 </body>
 </html>
