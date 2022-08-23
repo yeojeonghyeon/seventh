@@ -9,6 +9,7 @@
 <script	src="${pageContext.request.contextPath}/static/jQuery/jquery-3.6.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/common.js"></script>
 <link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+<link href="${pageContext.request.contextPath}/static/css/member.css" rel="stylesheet"></link>
 </head>
 <body>
     <div class="container h-100">

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/member")
 public class MemberController {
 	@RequestMapping("/init")
-	public String getInit(@RequestParam String content, @RequestParam Map<String, String> param, HttpServletRequest request) {
+	public String getInit(@RequestParam Map<String, String> param, HttpServletRequest request) {
 		return "memberSearchView";
 	}
 }
