@@ -22,8 +22,8 @@
 	rel="stylesheet"></link>
 </head>
 <body>
-	<div class="container h-100">
-		<div class="d-flex justify-content-center h-100">
+	<div class="container">
+		<div class="d-flex justify-content-center">
 			<div class="searchbar">
 				<form action="./search">
 					<select name="memberGrade">
