@@ -31,7 +31,7 @@
 							<option value="${grade.value}" ${param.memberGrade eq grade.value ? "selected" : ""}>${grade.name}</option>
 						</c:forEach>
 					</select>
-					<input class="search_input" type="text" name="content" placeholder="Search...">
+					<input class="search_input" type="text" name="content" placeholder="Search..." value="${param.content}">
 						<button class="search_icon"></button>
 				</form>
 			</div>
