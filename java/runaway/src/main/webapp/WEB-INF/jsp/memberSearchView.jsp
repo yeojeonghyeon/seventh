@@ -25,15 +25,41 @@
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="searchbar">
-				<select name="eletronicType">
-					<c:forEach var="product" items="${menu}">
-						<option value="${product.value}">${product.name}</option>
-					</c:forEach>
-				</select>
-				<input class="search_input" type="text" name="" placeholder="Search...">
-					<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+				<form action="./search">
+					<select name="memberGrade">
+						<c:forEach var="grade" items="${menu}">
+							<option value="${grade.value}">${grade.name}</option>
+						</c:forEach>
+					</select>
+					<input class="search_input" type="text" name="content" placeholder="Search...">
+						<button class="search_icon"></button>
+				</form>
 			</div>
 		</div>
 	</div>
+	
+	<section class="container">
+		<article>
+			<h4 class="mb-3">bootstrap table</h4>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>이름</th>
+						<th>주소</th>
+						<th>전화번호</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="member" items="${members}">
+						<tr>
+							<td>${member.name}</td>
+							<td>${member.addr}</td>
+							<td>${member.cellNo}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</article>
+	</section>
 </body>
 </html>

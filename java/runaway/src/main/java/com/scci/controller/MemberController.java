@@ -24,7 +24,7 @@ public class MemberController {
 	
 	@ModelAttribute
 	public void getMenu(Model model){
-		List<Menu> list = Arrays.asList(new Menu("tv", "tv"), new Menu("notebook", "notebook"));
+		List<Menu> list = Arrays.asList(new Menu("normal", "정회원"), new Menu("gold", "우수회원"));
 		model.addAttribute("menu", list);
 	}
 }
