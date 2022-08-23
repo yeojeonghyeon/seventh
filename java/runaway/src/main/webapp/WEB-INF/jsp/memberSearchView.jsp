@@ -28,7 +28,7 @@
 				<form action="./search">
 					<select name="memberGrade">
 						<c:forEach var="grade" items="${menu}">
-							<option value="${grade.value}">${grade.name}</option>
+							<option value="${grade.value}" ${param.memberGrade eq grade.value ? "selected" : ""}>${grade.name}</option>
 						</c:forEach>
 					</select>
 					<input class="search_input" type="text" name="content" placeholder="Search...">
