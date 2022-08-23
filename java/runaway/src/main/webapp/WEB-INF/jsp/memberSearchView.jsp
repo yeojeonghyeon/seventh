@@ -9,6 +9,9 @@
 <script	src="${pageContext.request.contextPath}/static/jQuery/jquery-3.6.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/common.js"></script>
 <link href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+<!-- fontawesome 추가 -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<!-- member.css 추가 -->
 <link href="${pageContext.request.contextPath}/static/css/member.css" rel="stylesheet"></link>
 </head>
 <body>
