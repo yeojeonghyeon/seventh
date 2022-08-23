@@ -25,13 +25,13 @@
 	<div class="container">
 		<div class="d-flex justify-content-center">
 			<div class="searchbar">
-				<form action="./search">
+				<form action="./search" method="post">
 					<select name="memberGrade">
 						<c:forEach var="grade" items="${menu}">
 							<option value="${grade.value}" ${param.memberGrade eq grade.value ? "selected" : ""}>${grade.name}</option>
 						</c:forEach>
 					</select>
-					<input class="search_input" type="text" name="content" placeholder="Search..." value="${param.content}">
+					<input class="search_input" type="text" name="content" placeholder="Search..." value="${param.content}"> 
 						<button class="search_icon"></button>
 				</form>
 			</div>
