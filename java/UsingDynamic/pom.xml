@@ -24,7 +24,7 @@
 		<repository>
 			<id>oracle</id>
 			<name>ORACLE JDBC Repository</name>
-			<url>https://mvnrepository.com/artifact/com.oracle/ojdbc6</url>
+			<url>http://www.datanucleus.org/downloads/maven2/</url>
 		</repository>
 	</repositories>
 
@@ -94,23 +94,42 @@
 			<artifactId>mariadb-java-client</artifactId>
 			<version>2.6.2</version>
 		</dependency>
-
+		
 		<dependency>
-		  <groupId>com.oracle</groupId>
-		  <artifactId>ojdbc6</artifactId>
-		  <version>11.2.0.3</version>
+		    <groupId>commons-dbcp</groupId>
+		    <artifactId>commons-dbcp</artifactId>
+		    <version>1.4</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc6 -->
+		<dependency>
+			<groupId>oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.3</version>
+		</dependency>
+
 		<!-- logging -->
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-api</artifactId>
+		    <version>2.0.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+		    <version>2.0.1</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.bgee.log4jdbc-log4j2</groupId>
 			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
 			<version>1.16</version>
 		</dependency>
-		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-			<version>2.7.4</version>
-		</dependency>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.4.1</version>
+        </dependency>
 
 	</dependencies>
 

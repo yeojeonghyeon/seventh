@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class TestDAOImpl implements TestDAO{
 	@Autowired
-	@Qualifier("sqlSessionOracle")
 	private SqlSession sqlSession;
 	
 
