@@ -28,7 +28,7 @@
 							aria-current="page" href="#">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="./member/init">Member</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="#">Pricing</a>
+						<li class="nav-item"><a class="nav-link" href="./book/init">Book</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="#">About</a></li>
 					</ul>

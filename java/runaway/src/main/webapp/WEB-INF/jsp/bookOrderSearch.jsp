@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>주문 내역 조회</title>
 <script
 	src="${pageContext.request.contextPath}/static/jQuery/jquery-3.6.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/common.js"></script>
@@ -25,7 +25,7 @@
 	<div class="container">
 		<div class="d-flex justify-content-center">
 			<div class="searchbar">
-				<form action="./search" method="post">
+				<form action="./orders" method="post">
 					<input class="search_input" type="text" name="content" placeholder="Search..." value="${param.content}"> 
 						<button class="search_icon"></button>
 				</form>
