@@ -16,4 +16,10 @@
 	       INNER JOIN CUSTOMER C ON B.CUST_ID = C.CUST_ID
 </select>
 
+<select id="selectCustomer" parameterType="java.util.Map" resultType="com.scci.vo.CustomerVO">
+	SELECT CUST_ID, CUST_NM, ADDRESS, PHONE
+	  FROM CUSTOMER
+	 WHERE CUST_NM LIKE #{custNm}||'%'
+</select>
+
 </mapper>
