@@ -26,11 +26,11 @@
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item active"><a class="nav-link"
 							aria-current="page" href="#">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="./member/init">Member</a>
+						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/init">Member</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="./book/init">Book</a>
+						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/book/init">Book</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/customer/init">Customer</a></li>
 					</ul>
 				</div>
 			</div>

@@ -4,9 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("customer")
+@RequestMapping("/customer")
 public class CustomerController {
-	public String index() {
+	@RequestMapping("/init")
+	public String init() {
 		return "customerSearchView";
 	}
 }
