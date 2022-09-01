@@ -11,7 +11,7 @@
 	<header></header>
 	<section class="searchSection">
 		<article>
-			<form class="searchForm" action="${pageContext.request.contextPath}/customer/list" method="post" >
+			<form class="searchForm" action="<c:url value="/customer/list"/>" method="post" >
 				<input name="custNm" class="searchIpt" value="${param.custNm}"/>
 				<button class="searchBtn">검색</button>
 			</form>

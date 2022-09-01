@@ -22,4 +22,23 @@
 	 WHERE CUST_NM LIKE #{custNm}||'%'
 </select>
 
+<select id="selectPublisher" resultType="map">
+	SELECT DISTINCT A.PUBLISHER
+	  FROM BOOK A
+</select>
+
+<select id="selectOrdersDetail" parameterType="java.util.Map" resultType="com.scci.vo.OrdersDtail">
+	SELECT A.ORD_ID, A.CUST_ID, A.SALES_PRICE, A.ORD_DT
+	      ,B.BOOK_ID, B.UNIT_PRICE, B.QTY
+	      ,C.BOOK_NM, C.PUBLISHER, C.PRICE
+	      ,D.CUST_NM, D.ADDRESS, D.PHONE
+	  FROM ORDERS A INNER JOIN ORDERS_DET B ON A.ORD_ID = B.ORD_ID
+	       INNER JOIN BOOK C ON C.BOOK_ID = B.BOOK_ID
+	       INNER JOIN CUSTOMER D ON D.CUST_ID = A.CUST_ID
+	 WHERE 1=1
+	   AND C.BOOK_NM LIKE #{bookNm}||'%'
+	   AND C.PUBLISHER = #{publisher}
+	ORDER BY A.ORD_ID
+</select>
+
 </mapper>
