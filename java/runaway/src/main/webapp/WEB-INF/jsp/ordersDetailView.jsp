@@ -15,7 +15,7 @@
 			<form class="searchForm" action="<c:url value="/book/ordersDetail"/>" method="post" >
 				<select name="publisher" class="">
 					<c:forEach items="${publishers}" var="publisher">
-						<option value="${publisher}">${publisher}</option>
+						<option value="${publisher.PUBLISHER}" ${param.publisher eq publisher.PUBLISHER ? "selected" : ""}>${publisher.PUBLISHER}</option>
 					</c:forEach>
 				</select>
 				<input name="bookNm" class="searchIpt" value="${param.bookNm}"/>
