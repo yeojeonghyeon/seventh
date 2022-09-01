@@ -1,1 +1,39 @@
 @charset "UTF-8";
+
+.searchSection form.searchForm {
+	background-color: pink;
+	text-align: center;
+	border-radius: 10px;
+}
+
+.searchSection form.searchForm select{
+	width: 200px;
+}
+
+.searchSection form.searchForm input{
+	width: 300px;
+}
+
+section.container > article.content h3{
+	color: #a8085e;
+	font-size: 32px;
+}
+
+section.container > article.content{
+	background-color:#eda73e;
+	text-align: center;
+}
+
+section.container > article.content table.tbl th{
+	border: 1px solid #735f6a;
+	color: #a8085e;
+}
+
+section.container > article.content table.tbl td{
+	border: 1px solid #735f6a;
+}
+
+section.container > article.content table.tbl tr:hover{
+	background-color:white;
+}
+

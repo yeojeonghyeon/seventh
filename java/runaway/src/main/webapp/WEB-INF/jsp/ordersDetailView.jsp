@@ -26,7 +26,7 @@
 	<section class="container">
 		<article class="content">
 			<h3>주문 상세 리스트</h3>
-			<table>
+			<table class="tbl">
 				<thead>
 					<tr>
 						<th>주문ID</th>
