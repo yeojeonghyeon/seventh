@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.scci.dao.BookOrderDao;
+import com.scci.vo.OrdersDetailVO;
 
 @Service
 public class BookOrderServiceImpl implements BookOrderService{
@@ -16,5 +17,15 @@ public class BookOrderServiceImpl implements BookOrderService{
 	@Override
 	public List<Map<String, String>> getOrders(Map<String, String> params) {
 		return bookOrderDao.getOrders(params);
+	}
+
+	@Override
+	public List<Map<String, String>> getPublisher() {
+		return bookOrderDao.getPublisher();
+	}
+
+	@Override
+	public List<OrdersDetailVO> getOrdersDetail(Map<String, String> params) {
+		return bookOrderDao.getOrdersDetail(params);
 	}
 }
