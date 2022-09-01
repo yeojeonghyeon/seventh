@@ -17,11 +17,17 @@
 section.container > article.content h3{
 	color: #a8085e;
 	font-size: 32px;
+	margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
 }
 
 section.container > article.content{
 	background-color:#eda73e;
 	text-align: center;
+}
+
+section.container > article.content table.tbl{
+	width: 100%;
 }
 
 section.container > article.content table.tbl th{
