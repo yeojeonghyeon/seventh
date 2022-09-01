@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.scci.vo.OrdersDetailVO;
+
 @Repository
 public class BookOrderDaoImpl implements BookOrderDao {
 	@Autowired
@@ -14,7 +16,16 @@ public class BookOrderDaoImpl implements BookOrderDao {
 
 	@Override
 	public List<Map<String, String>> getOrders(Map<String, String> params) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectList("mapper.test.selectOrderList", params);
+	}
+
+	@Override
+	public List<Map<String, String>> getPublisher() {
+		return sqlSession.selectList("mapper.test.selectPublisher");
+	}
+
+	@Override
+	public List<OrdersDetailVO> getOrdersDetail(Map<String, String> params) {
+		return sqlSession.selectList("mapper.test.selectOrdersDetail", params);
 	}
 }

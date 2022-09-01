@@ -27,7 +27,7 @@
 	  FROM BOOK A
 </select>
 
-<select id="selectOrdersDetail" parameterType="java.util.Map" resultType="com.scci.vo.OrdersDtail">
+<select id="selectOrdersDetail" parameterType="java.util.Map" resultType="com.scci.vo.OrdersDetailVO">
 	SELECT A.ORD_ID, A.CUST_ID, A.SALES_PRICE, A.ORD_DT
 	      ,B.BOOK_ID, B.UNIT_PRICE, B.QTY
 	      ,C.BOOK_NM, C.PUBLISHER, C.PRICE
