@@ -36,14 +36,14 @@ public class BookOrderController {
 	
 	@RequestMapping(value="/ordersDetail", method=RequestMethod.GET)
 	public String ordersDetailInit() {
-		return "orderDetailView";
+		return "ordersDetailView";
 	}
 	
 	@RequestMapping(value="/ordersDetail", method=RequestMethod.POST)
 	public String ordersDetail(@RequestParam Map<String, String> param, Model model) {
 		List<OrdersDetailVO> orders = bookOrderService.getOrdersDetail(param);
 		model.addAttribute("orders", orders);
-		return "orderDetailView";
+		return "ordersDetailView";
 	}
 	
 	@ModelAttribute

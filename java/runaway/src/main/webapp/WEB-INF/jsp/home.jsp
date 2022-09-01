@@ -29,6 +29,7 @@
 						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/init">Member</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/book/init">Book</a>
+						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/book/ordersDetail">Orders Detail</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/customer/init">Customer</a></li>
 					</ul>
