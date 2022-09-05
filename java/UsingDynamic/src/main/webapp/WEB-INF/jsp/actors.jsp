@@ -14,7 +14,7 @@
 	</ul>
 	<ul>
 		<c:forEach var="actor" items="${results}">
-			<li>${actor.actor_id} ${actor.first_name} ${actor.last_name}</li>
+			<li>${actor.BOOK_ID} ${actor.BOOK_NM} ${actor.PUBLISHER}</li>
 		</c:forEach>
 	</ul>
 </body>
