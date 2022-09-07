@@ -9,4 +9,14 @@
 	  from book
 </select>
 
+<select id="selectCustomer" parameterType="String" resultType="map">
+	select cust_id, cust_nm
+	  from customer
+	 where cust_id = #{value} 
+</select>
+
+<insert id="insertCustomer" parameterType="java.util.Map">
+	insert into customer(cust_id, cust_nm, address, phone) values(#{custId},#{custNm},#{address},#{phone})
+</insert>
+
 </mapper>

@@ -46,4 +46,17 @@ public class HomeController {
 		model.addAttribute("results", results);
 		return "actors";
 	}
+	
+	@RequestMapping(value="/customer")
+	public String customer(@RequestParam String custId, Model model) {
+		List<Map<String, String>> results = testService.selectCustomer(custId);
+		model.addAttribute("results", results);
+		return "customer";
+	}
+	@RequestMapping(value="/insertCustomer", method=RequestMethod.POST)
+	public String insertCustomer(@RequestParam Map<String, String> param, Model model) {
+		int affectedRow = testService.insertCustomer(param);
+		model.addAttribute("affectedRow", affectedRow);
+		return "insertCustomerResult";
+	}
 }

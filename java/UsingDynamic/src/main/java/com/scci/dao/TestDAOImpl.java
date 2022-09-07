@@ -19,4 +19,16 @@ public class TestDAOImpl implements TestDAO{
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("mapper.oracle.test.selectBook", param);
 	}
+
+
+	@Override
+	public List<Map<String, String>> selectCustomer(String custId) {
+		return sqlSession.selectList("mapper.oracle.test.selectCustomer", custId);
+	}
+
+
+	@Override
+	public int insertCustomer(Map<String, String> param) {
+		return sqlSession.insert("mapper.oracle.test.insertCustomer", param);
+	}
 }

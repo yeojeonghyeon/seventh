@@ -19,4 +19,16 @@ public class TestServiceImpl implements TestService {
 		return testDAO.selectActors(param);
 	}
 
+	@Override
+	public List<Map<String, String>> selectCustomer(String custId) {
+		// TODO Auto-generated method stub
+		return testDAO.selectCustomer(custId);
+	}
+
+	@Override
+	public int insertCustomer(Map<String, String> param) {
+		// TODO Auto-generated method stub
+		return testDAO.insertCustomer(param);
+	}
+
 }

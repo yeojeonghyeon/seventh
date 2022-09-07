@@ -37,7 +37,9 @@
 	       INNER JOIN CUSTOMER D ON D.CUST_ID = A.CUST_ID
 	 WHERE 1=1
 	   AND C.BOOK_NM LIKE #{bookNm}||'%'
+	<if test="publisher != null">
 	   AND C.PUBLISHER = #{publisher}
+	</if>
 	ORDER BY A.ORD_ID
 </select>
 
