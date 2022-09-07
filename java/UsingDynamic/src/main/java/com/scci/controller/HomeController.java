@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.scci.service.TestService;
+import com.scci.vo.CustomerVO;
 
 @Controller
 public class HomeController {
@@ -54,7 +55,7 @@ public class HomeController {
 		return "customer";
 	}
 	@RequestMapping(value="/insertCustomer", method=RequestMethod.POST)
-	public String insertCustomer(@RequestParam Map<String, String> param, Model model) {
+	public String insertCustomer(@RequestParam Map<String, String> param, CustomerVO customer, Model model) {
 		int affectedRow = testService.insertCustomer(param);
 		model.addAttribute("affectedRow", affectedRow);
 		return "insertCustomerResult";
