@@ -24,6 +24,7 @@
 			value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
 		<property name="username" value="book" />
 		<property name="password" value="book" />
+		<property name="defaultAutoCommit" value="false" />
 	</bean>
 
 
@@ -36,7 +37,7 @@
 			value="classpath:mybatis/mappers/test-oracle.xml" />
 		<property name="transactionFactory">
 			<bean
-				class="org.mybatis.spring.transaction.SpringManagedTransactionFactory" />
+				class="org.apache.ibatis.transaction.managed.ManagedTransactionFactory" />
 		</property>
 	</bean>
 	<bean id="sqlSession"
@@ -46,24 +47,41 @@
 
 	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource" />
+		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-	
+
+	<!-- AOP Transaction을 실행하는 대상 Method 설정 -->
 	<tx:advice id="txAdvice" transaction-manager="txManager">
 		<tx:attributes>
-			<tx:method name="get*" read-only="true" />
-			<tx:method name="insert*" read-only="false" propagation="REQUIRED" rollback-for="Exception" />
-			<tx:method name="update*" read-only="false"	propagation="REQUIRED" rollback-for="Exception" />
-			<tx:method name="delete*" read-only="false"	propagation="REQUIRED" rollback-for="Exception" />
+			<tx:method name="insert*" rollback-for="RuntimeException"></tx:method>
+			<tx:method name="create*" rollback-for="RuntimeException"></tx:method>
+			<tx:method name="update*" rollback-for="RuntimeException"></tx:method>
+			<tx:method name="delete*" rollback-for="RuntimeException"></tx:method>
+			<tx:method name="*" rollback-for="Exception"></tx:method>
+			<tx:method name="select*" read-only="true"></tx:method>
+			<tx:method name="get*" read-only="true"></tx:method>
 		</tx:attributes>
 	</tx:advice>
-	
+
+	<!-- AOP Pointcut/Advisor 설정 -->
 	<aop:config>
-    	<aop:pointcut id="txMethod" expression="execution(* com.scci.service..*ServiceImpl.*(..))" />
-    	<aop:advisor advice-ref="txAdvice" pointcut-ref="txMethod" />
+		<aop:pointcut id="txMethod"
+			expression="execution(* com.scci.dao..*Impl.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txMethod" />
 	</aop:config>
 
-	<tx:annotation-driven />
+	<!-- <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+		<property name="dataSource" ref="dataSource" /> </bean> <tx:advice id="txAdvice" 
+		transaction-manager="txManager"> <tx:attributes> <tx:method name="get*" read-only="true" 
+		/> <tx:method name="insert*" read-only="false" propagation="REQUIRED" rollback-for="Exception" 
+		/> <tx:method name="update*" read-only="false" propagation="REQUIRED" rollback-for="Exception" 
+		/> <tx:method name="delete*" read-only="false" propagation="REQUIRED" rollback-for="Exception" 
+		/> </tx:attributes> </tx:advice> <aop:config> <aop:pointcut id="txMethod" 
+		expression="execution(* com.scci.service..*(..))" /> <aop:advisor advice-ref="txAdvice" 
+		pointcut-ref="txMethod" /> </aop:config> -->
+
+	<tx:annotation-driven
+		transaction-manager="txManager" />
 
 	<!-- mysql, mariadb -->
 	<!-- <bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource"> 

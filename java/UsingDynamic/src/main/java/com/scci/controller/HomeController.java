@@ -55,7 +55,7 @@ public class HomeController {
 		return "customer";
 	}
 	@RequestMapping(value="/insertCustomer", method=RequestMethod.POST)
-	public String insertCustomer(@RequestParam Map<String, String> param, CustomerVO customer, Model model) {
+	public String insertCustomer(@RequestParam Map<String, String> param, CustomerVO customer, Model model) throws Exception {
 		int affectedRow = testService.insertCustomer(param);
 		model.addAttribute("affectedRow", affectedRow);
 		return "insertCustomerResult";

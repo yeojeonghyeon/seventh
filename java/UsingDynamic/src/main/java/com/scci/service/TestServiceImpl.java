@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.scci.dao.TestDAO;
 
@@ -26,8 +27,7 @@ public class TestServiceImpl implements TestService {
 	}
 
 	@Override
-	public int insertCustomer(Map<String, String> param) {
-		// TODO Auto-generated method stub
+	public int insertCustomer(Map<String, String> param){
 		return testDAO.insertCustomer(param);
 	}
 

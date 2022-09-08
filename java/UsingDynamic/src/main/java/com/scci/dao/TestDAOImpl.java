@@ -28,7 +28,10 @@ public class TestDAOImpl implements TestDAO{
 
 
 	@Override
+	@Transactional(rollbackFor = {RuntimeException.class})
 	public int insertCustomer(Map<String, String> param) {
-		return sqlSession.insert("mapper.oracle.test.insertCustomer", param);
+		int result = sqlSession.insert("mapper.oracle.test.insertCustomer", param);
+		result = 1/0;
+		return result;
 	}
 }
