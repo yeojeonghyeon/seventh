@@ -29,6 +29,7 @@
 						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/init">Member</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/book/init">Book</a>
+						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/book/inQty">책 입고 정보 조회</a>
 						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/book/ordersDetail">Orders Detail</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/customer/init">Customer</a></li>

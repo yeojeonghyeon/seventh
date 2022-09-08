@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.scci.vo.InQtyVO;
 import com.scci.vo.OrdersDetailVO;
 
 @Repository
@@ -27,5 +28,10 @@ public class BookOrderDaoImpl implements BookOrderDao {
 	@Override
 	public List<OrdersDetailVO> getOrdersDetail(Map<String, String> params) {
 		return sqlSession.selectList("mapper.test.selectOrdersDetail", params);
+	}
+
+	@Override
+	public List<InQtyVO> getInQty(Map<String, String> params) {
+		return sqlSession.selectList("mapper.test.selectInQtyInfo", params);
 	}
 }

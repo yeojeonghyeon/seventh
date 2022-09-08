@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.scci.service.BookOrderService;
+import com.scci.vo.InQtyVO;
 import com.scci.vo.OrdersDetailVO;
 
 @Controller
@@ -50,5 +51,11 @@ public class BookOrderController {
 	public void getPublisher(Model model) {
 		List<Map<String, String>> publishers = bookOrderService.getPublisher();
 		model.addAttribute("publishers", publishers);
+	}
+	@RequestMapping(value="/inQty", method=RequestMethod.GET)
+	public String getInQty(@RequestParam Map<String, String> param, Model model) {
+		List<InQtyVO> results = bookOrderService.getInQty(param);
+		model.addAttribute("results", results);
+		return "inQty";
 	}
 }
