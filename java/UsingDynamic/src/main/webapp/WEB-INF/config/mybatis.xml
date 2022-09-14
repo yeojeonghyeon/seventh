@@ -64,9 +64,14 @@
 	</tx:advice>
 
 	<!-- AOP Pointcut/Advisor 설정 -->
+<!-- 	<aop:config> -->
+<!-- 		<aop:pointcut id="txMethod" -->
+<!-- 			expression="execution(* com.scci.dao..*Impl.*(..))" /> -->
+<!-- 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txMethod" /> -->
+<!-- 	</aop:config> -->
 	<aop:config>
 		<aop:pointcut id="txMethod"
-			expression="execution(* com.scci.dao..*Impl.*(..))" />
+			expression="execution(* com.scci.service..*Service.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txMethod" />
 	</aop:config>
 

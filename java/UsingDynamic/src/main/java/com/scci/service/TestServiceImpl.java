@@ -28,7 +28,14 @@ public class TestServiceImpl implements TestService {
 
 	@Override
 	public int insertCustomer(Map<String, String> param){
-		return testDAO.insertCustomer(param);
+		int result = testDAO.insertCustomer(param);
+		result = 1/0;
+		return result;
 	}
+	
+//	@Override
+//	public int insertCustomer(Map<String, String> param){
+//		return testDAO.insertCustomer(param);
+//	}
 
 }
