@@ -64,17 +64,19 @@
 	</tx:advice>
 
 	<!-- AOP Pointcut/Advisor 설정 -->
-<!-- 	<aop:config> -->
-<!-- 		<aop:pointcut id="txMethod" -->
-<!-- 			expression="execution(* com.scci.dao..*Impl.*(..))" /> -->
-<!-- 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txMethod" /> -->
-<!-- 	</aop:config> -->
 	<aop:config>
 		<aop:pointcut id="txMethod"
 			expression="execution(* com.scci.service..*Service.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txMethod" />
 	</aop:config>
 
+	<tx:annotation-driven
+		transaction-manager="txManager" />
+<!-- 	<aop:config> -->
+<!-- 		<aop:pointcut id="txMethod" -->
+<!-- 			expression="execution(* com.scci.dao..*Impl.*(..))" /> -->
+<!-- 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txMethod" /> -->
+<!-- 	</aop:config> -->
 	<!-- <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
 		<property name="dataSource" ref="dataSource" /> </bean> <tx:advice id="txAdvice" 
 		transaction-manager="txManager"> <tx:attributes> <tx:method name="get*" read-only="true" 
@@ -85,8 +87,6 @@
 		expression="execution(* com.scci.service..*(..))" /> <aop:advisor advice-ref="txAdvice" 
 		pointcut-ref="txMethod" /> </aop:config> -->
 
-	<tx:annotation-driven
-		transaction-manager="txManager" />
 
 	<!-- mysql, mariadb -->
 	<!-- <bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource"> 
